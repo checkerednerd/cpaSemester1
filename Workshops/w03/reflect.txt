@@ -1,0 +1,12 @@
+1) The three iteration constructs are while loop, do while loop, and a for loop.
+
+2) The difference between a 'do while' and a 'while' loop is the order in which
+they execute their instructions for iteration. A while loop tests the condition
+before executing the sequence, but a do while loop executes its sequence first,
+then performs its change statement, and finally tests the condition. This means
+that a do while loop will execute its sequence one or more times, but a while 
+loop will execute its sequence zero or more times.
+
+3) A conditional expression is a shortened representation of an alternate
+path construct. It performs an if/else evaluation on a condition, but does
+so being represented by a single line of code.
