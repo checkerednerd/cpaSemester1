@@ -6,8 +6,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include<stdlib.h> //required for rand and srand function
+#include<time.h> //required for time function
 
 
 int main(void) {
