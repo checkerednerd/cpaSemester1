@@ -1,3 +1,2 @@
 ﻿  randomNumGen.c
-c:\users\abra_\onedrive\documents\github\cpasemester1\personalprojects\learning\randomnumber\randomnumber\randomnumgen.c(17): warning C4013: 'time' undefined; assuming extern returning int
   randomNumber.vcxproj -> C:\Users\abra_\OneDrive\Documents\GitHub\cpaSemester1\PersonalProjects\Learning\randomNumber\Debug\randomNumber.exe
