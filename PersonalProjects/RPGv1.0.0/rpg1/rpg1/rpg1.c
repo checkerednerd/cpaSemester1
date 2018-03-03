@@ -82,7 +82,32 @@ int main(void) {
 			break;
 
 		case 3: //Defend on your turn, taking reduced damage from skeleton
+			usrARM += 2;
+			system("cls");
+			printf("You bolster your stance defensively...\n");
+			printf("Armor +2 for the rest of the turn.\n");
 
+			if (skeHP > 0) { //if skeleton is not defeated, it will atack
+				dmg = rand() % 4 + 2; //2-5 for skeleton
+				printf("The skeleton swings its rotting hang at you...\n");
+				printf("The skeleton dealt %d of damage against your armor...\n", dmg);
+				dmg -= usrARM;
+				printf("You took %d points of damage.\n", dmg);
+				usrHP -= dmg;
+				printf("You have %d HP remaining...\n", usrHP);
+				printf("\n");
+
+				if (usrHP <= 0) { //if skeleton has defeated you
+					system("cls");
+					printf("You were defeated...\n");
+				}
+
+			}
+			else if (skeHP <= 0) { //if you have defeated skeleton, skeleton will not attack
+				system("cls");
+				printf("Skeleton defeated...\n");
+			}
+			usrARM -= 2;
 			break;
 
 		case 4: //Flee battle
