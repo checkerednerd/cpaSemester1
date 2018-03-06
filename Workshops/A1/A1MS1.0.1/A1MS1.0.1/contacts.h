@@ -20,17 +20,17 @@ struct Name {
 // Place your code here...
 struct Address {
 	int streetNumber = 1;
-	char street[40];
+	char street[41];
 	int apartmentNumber = 1;
-	char postalCode[7];
-	char city[40];
+	char postalCode[8];
+	char city[41];
 };
 
 
 // Structure type Numbers declaration
 // Place your code here...
 struct Numbers {
-	char cell[20];
-	char home[20];
-	char business[20];
+	char cell[21];
+	char home[21];
+	char business[21];
 };
