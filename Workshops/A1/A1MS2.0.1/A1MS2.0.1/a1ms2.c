@@ -19,10 +19,14 @@ Milestone:  2
 //       to look for it in the same directory/folder as this source file
 // #include your contacts header file on the next line:
 
+#include "contacts.h"
+
 
 int main(void)
 {
 	// Declare variables here:
+	struct Name fullName = { {"First"}, {'b'}, {'c'} };
+	printf("%s %s\n", fullName.firstName, fullName.lastName);
 
 
 
