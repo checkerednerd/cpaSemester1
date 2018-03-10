@@ -10,8 +10,11 @@
 
 int main(void) {
 
-	struct Name fullName = { { "First" },{ 'M' },{ "Last" } }; //double quotes for strings, single quotes for characters
-	printf("%s %s %s\n", fullName.firstName, fullName.middleInitial, fullName.lastName);
+	struct Name fullName = { { "Ronald" },{ "MR" },{ "Vincent" } };
+	struct Address fullAddr = { { 136 },{ "Medland Street" },{ 0 },{ "M6P2N5" },{ "Toronto" } };
+	struct Numbers phoneNum = { { "1231231234" },{ "1112223334" },{ "1234567890" } };
+
+	printf("%d %s %d\n", fullAddr.streetNumber, phoneNum.business, fullAddr.apartmentNumber);
 
 	return 0;
 }

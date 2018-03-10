@@ -25,15 +25,18 @@ Milestone:  2
 int main(void)
 {
 	// Declare variables here:
-	struct Name fullName = { {"First"}, {'b'}, {'c'} };
-	printf("%s %s\n", fullName.firstName, fullName.lastName);
+	struct Name fullName = { {" "}, {" "}, {" "} };
+	struct Address fullAddr = { {0}, {" "}, {0}, {" "}, {" "} };
+	struct Numbers phoneNum = { {" "}, {" "}, {" "} };
+
+	printf("%d %s %d\n", fullAddr.streetNumber, phoneNum.business, fullAddr.apartmentNumber);
 
 
 
 	// Display the title
 
 
-
+	
 	// Contact Name Input:
 
 
