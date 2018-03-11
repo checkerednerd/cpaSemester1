@@ -34,6 +34,7 @@ int main(void)
 	struct Numbers phoneNum = { {' '}, {' '}, {' '} };
 
 	char choice = ' ';
+	int streetNum, aptNum;
 
 	// Display the title
 	printf("Contact Management System\n");
@@ -54,40 +55,79 @@ int main(void)
 		printf("Please enter the contact's middle initial(s): ");
 		scanf("%s", fullName.middleInitial);
 	}
+	choice = ' '; //clear choice for future use
 
 	printf("Please enter the contact's last name: ");
 	scanf("%s", fullName.lastName);
 
 	// Contact Address Input:
 	printf("Please enter the contact's street number: ");
+	scanf("%d", &streetNum);
+	fullAddr.streetNumber = streetNum;
 
-	printf("Please enter the contact's street name: ");
+	printf("Please enter the contact's street name: "); //NEED TO ADJUST FOR SPACES
+	scanf("%s", fullAddr.street);
 
-	printf("Do you want to enter an apartment number? (y or n): ");
+	while (choice != 'n' && choice != 'y') {
+		clear(); //clear input buffer
+		printf("Do you want to enter an apartment number? (y or n): ");
+		choice = getchar();
+	}
 
-	//if yes
-	printf("Please enter the contact's apartment number: ");
+	if (choice == 'y') {
+		printf("Please enter the contact's apartment number: ");
+		scanf("%d", &aptNum);
+		fullAddr.apartmentNumber = aptNum;
+	}
+	choice = ' '; //clear choice for future use
 
-	printf("Please enter the contact's postal code: ");
+	printf("Please enter the contact's postal code: "); //NEED TO ADJUST FOR SPACES
+	scanf("%s", fullAddr.postalCode);
+
+	printf("You entered %s\n", fullAddr.postalCode);
+	clear(); //clear input buffer for spaces
 
 	printf("Please enter the contact's city: ");
-
+	scanf("%s", fullAddr.city);
 
 	// Contact Numbers Input:
-	printf("Do you want to enter a cell phone number? (y or n): ");
 
-	//if yes
-	printf("Please enter the contact's cell phone number: ");
+	while (choice != 'n' && choice != 'y') {
+		clear(); //clear input buffer
+		printf("Do you want to enter a cell phone number? (y or n): ");
+		choice = getchar();
+	}
 
-	printf("Do you want to enter a home phone number? (y or n): ");
+	if (choice == 'y') {
+		printf("Please enter the contact's cell phone number: ");
+		scanf("%s", phoneNum.cell);
+	}
+	choice = ' '; //clear choice for future use
 
-	//if yes
-	printf("Please enter the contact's cell phone number: ");
+	while (choice != 'n' && choice != 'y') {
+		clear();
+		printf("Do you want to enter a home phone number? (y or n): ");
+		choice = getchar();
+	}
 
-	printf("Do you want to enter a business phone number? (y or n): ");
+	if (choice == 'y') {
+		printf("Please enter the contact's home phone number: ");
+		scanf("%s", phoneNum.home);
+	}
+	choice = ' ';
 
-	//if yes
-	printf("Please enter the contact's cell phone number: ");
+	while (choice != 'n' && choice != 'y') {
+		clear();
+		printf("Do you want to enter a business phone number? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y') {
+		printf("Please enter the contact's business phone number: ");
+		scanf("%s", phoneNum.business);
+	}
+	choice = ' ';
+
 	// Display Contact Summary Details
 
 
