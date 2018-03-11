@@ -35,6 +35,11 @@ int main(void)
 
 	char choice = ' ';
 	int streetNum, aptNum;
+	int hasMid = 0;
+	int hasApt = 0;
+	int hasCell = 0;
+	int hasHome = 0;
+	int hasBus = 0;
 
 	// Display the title
 	printf("Contact Management System\n");
@@ -45,15 +50,16 @@ int main(void)
 	scanf("%s", fullName.firstName);
 
 
-	while (choice != 'n' && choice != 'y') {
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
 		printf("Do you want to enter a middle initial(s)? (y or n): ");
 		choice = getchar();
 	}
 
-	if (choice == 'y') {
+	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's middle initial(s): ");
 		scanf("%s", fullName.middleInitial);
+		hasMid = 1;
 	}
 	choice = ' '; //clear choice for future use
 
@@ -68,23 +74,22 @@ int main(void)
 	printf("Please enter the contact's street name: "); //NEED TO ADJUST FOR SPACES
 	scanf("%s", fullAddr.street);
 
-	while (choice != 'n' && choice != 'y') {
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
 		printf("Do you want to enter an apartment number? (y or n): ");
 		choice = getchar();
 	}
 
-	if (choice == 'y') {
+	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's apartment number: ");
 		scanf("%d", &aptNum);
 		fullAddr.apartmentNumber = aptNum;
+		hasApt = 1;
 	}
 	choice = ' '; //clear choice for future use
 
 	printf("Please enter the contact's postal code: "); //NEED TO ADJUST FOR SPACES
 	scanf("%s", fullAddr.postalCode);
-
-	printf("You entered %s\n", fullAddr.postalCode);
 	clear(); //clear input buffer for spaces
 
 	printf("Please enter the contact's city: ");
@@ -92,48 +97,85 @@ int main(void)
 
 	// Contact Numbers Input:
 
-	while (choice != 'n' && choice != 'y') {
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
 		printf("Do you want to enter a cell phone number? (y or n): ");
 		choice = getchar();
 	}
 
-	if (choice == 'y') {
+	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's cell phone number: ");
 		scanf("%s", phoneNum.cell);
+		hasCell = 1;
 	}
 	choice = ' '; //clear choice for future use
 
-	while (choice != 'n' && choice != 'y') {
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear();
 		printf("Do you want to enter a home phone number? (y or n): ");
 		choice = getchar();
 	}
 
-	if (choice == 'y') {
+	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's home phone number: ");
 		scanf("%s", phoneNum.home);
+		hasHome = 1;
 	}
 	choice = ' ';
 
-	while (choice != 'n' && choice != 'y') {
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear();
 		printf("Do you want to enter a business phone number? (y or n): ");
 		choice = getchar();
 	}
 
-	if (choice == 'y') {
+	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's business phone number: ");
 		scanf("%s", phoneNum.business);
+		hasBus = 1;
 	}
 	choice = ' ';
 
 	// Display Contact Summary Details
+	putchar('\n');
+	printf("Contact Details\n");
+	printf("---------------\n");
+	printf("Name Details\n");
+	printf("First name: %s\n", fullName.firstName);
 
+	if (hasMid == 1) {
+		printf("Middle initial(s): %s\n", fullName.middleInitial);
+	}
+	
+	printf("Last name: %s\n", fullName.lastName);
+	putchar('\n');
 
+	printf("Address Details\n");
+	printf("Street number: %d\n", fullAddr.streetNumber);
+	printf("Street name: %s\n", fullAddr.street);
+
+	if (hasApt == 1) {
+		printf("Apartment: %d\n", fullAddr.apartmentNumber);
+	}
+
+	printf("Postal code: %s\n", fullAddr.postalCode);
+	printf("City: %s\n", fullAddr.city);
+	putchar('\n');
+
+	printf("Phone Numbers:\n");
+	if (hasCell == 1) {
+		printf("Cell phone number: %s\n", phoneNum.cell);
+	}
+	if (hasHome == 1) {
+		printf("Home phone number: %s\n", phoneNum.home);
+	}
+	if (hasBus == 1) {
+		printf("Business phone number: %s\n", phoneNum.business);
+	}
+	putchar('\n');
 
 	// Display Completion Message
-
+	printf("Structure test for Name, Address, and Numbers Done!\n");
 
 
 	return 0;
