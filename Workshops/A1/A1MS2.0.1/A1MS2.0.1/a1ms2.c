@@ -21,34 +21,73 @@ Milestone:  2
 
 #include "contacts.h"
 
+void clear(void) { //empties the input buffer when called
+	while (getchar() != '\n')
+		;
+}
 
 int main(void)
 {
 	// Declare variables here:
-	struct Name fullName = { {" "}, {" "}, {" "} };
-	struct Address fullAddr = { {0}, {" "}, {0}, {" "}, {" "} };
-	struct Numbers phoneNum = { {" "}, {" "}, {" "} };
+	struct Name fullName = { {' '}, {' '}, {' '} };
+	struct Address fullAddr = { {0}, {' '}, {0}, {' '}, {' '} };
+	struct Numbers phoneNum = { {' '}, {' '}, {' '} };
 
-	printf("%d %s %d\n", fullAddr.streetNumber, phoneNum.business, fullAddr.apartmentNumber);
-
-
+	char choice = ' ';
 
 	// Display the title
+	printf("Contact Management System\n");
+	printf("-------------------------\n");
 
-
-	
 	// Contact Name Input:
+	printf("Please enter the contact's first name: ");
+	scanf("%s", fullName.firstName);
 
 
+	while (choice != 'n' && choice != 'y') {
+		clear(); //clear input buffer
+		printf("Do you want to enter a middle initial(s)? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y') {
+		printf("Please enter the contact's middle initial(s): ");
+		scanf("%s", fullName.middleInitial);
+	}
+
+	printf("Please enter the contact's last name: ");
+	scanf("%s", fullName.lastName);
 
 	// Contact Address Input:
+	printf("Please enter the contact's street number: ");
 
+	printf("Please enter the contact's street name: ");
+
+	printf("Do you want to enter an apartment number? (y or n): ");
+
+	//if yes
+	printf("Please enter the contact's apartment number: ");
+
+	printf("Please enter the contact's postal code: ");
+
+	printf("Please enter the contact's city: ");
 
 
 	// Contact Numbers Input:
+	printf("Do you want to enter a cell phone number? (y or n): ");
 
+	//if yes
+	printf("Please enter the contact's cell phone number: ");
 
+	printf("Do you want to enter a home phone number? (y or n): ");
 
+	//if yes
+	printf("Please enter the contact's cell phone number: ");
+
+	printf("Do you want to enter a business phone number? (y or n): ");
+
+	//if yes
+	printf("Please enter the contact's cell phone number: ");
 	// Display Contact Summary Details
 
 
