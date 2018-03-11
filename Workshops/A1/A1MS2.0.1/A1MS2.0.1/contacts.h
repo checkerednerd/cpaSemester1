@@ -22,7 +22,7 @@ struct Address {
 	int streetNumber;
 	char street[40];
 	int apartmentNumber;
-	char postalCode[7];
+	char postalCode[8];
 	char city[40];
 };
 

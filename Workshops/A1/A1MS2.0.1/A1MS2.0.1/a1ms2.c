@@ -30,11 +30,12 @@ int main(void)
 {
 	// Declare variables here:
 	struct Name fullName = { {' '}, {' '}, {' '} };
-	struct Address fullAddr = { {0}, {' '}, {0}, {' '}, {' '} };
+	struct Address fullAddr = { 0, {' '}, 0, {' '}, {' '} };
 	struct Numbers phoneNum = { {' '}, {' '}, {' '} };
 
 	char choice = ' ';
 	int streetNum, aptNum;
+
 	int hasMid = 0;
 	int hasApt = 0;
 	int hasCell = 0;
@@ -71,8 +72,9 @@ int main(void)
 	scanf("%d", &streetNum);
 	fullAddr.streetNumber = streetNum;
 
-	printf("Please enter the contact's street name: "); //NEED TO ADJUST FOR SPACES
-	scanf("%s", fullAddr.street);
+	clear(); //clear input buffer for whitespace
+	printf("Please enter the contact's street name: ");
+	scanf("%[^\n]s", fullAddr.street); //reads text until new line (overrides default until whitespace)
 
 	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
@@ -88,9 +90,9 @@ int main(void)
 	}
 	choice = ' '; //clear choice for future use
 
-	printf("Please enter the contact's postal code: "); //NEED TO ADJUST FOR SPACES
-	scanf("%s", fullAddr.postalCode);
-	clear(); //clear input buffer for spaces
+	clear(); //clear input buffer for whitespace
+	printf("Please enter the contact's postal code: ");
+	scanf("%[^\n]s", fullAddr.postalCode);
 
 	printf("Please enter the contact's city: ");
 	scanf("%s", fullAddr.city);
@@ -176,7 +178,6 @@ int main(void)
 
 	// Display Completion Message
 	printf("Structure test for Name, Address, and Numbers Done!\n");
-
 
 	return 0;
 }
