@@ -28,7 +28,6 @@ void clear(void) { //empties the input buffer when called
 
 int main(void)
 {
-    // Declare variables here:
 	// Declare variables here:
 	struct Name fullName = { { ' ' },{ ' ' },{ ' ' } };
 	struct Address fullAddr = { 0,{ ' ' }, 0,{ ' ' },{ ' ' } };
@@ -43,30 +42,30 @@ int main(void)
 	int hasHome = 0;
 	int hasBus = 0;
 
-    // Create a variable of type Contact and call it something self-describing like "contact"
-    // - HINT: Be sure to initialize the values to 0 and empty C strings
-	struct Contact contact = {}; 
+	// Create a variable of type Contact and call it something self-describing like "contact"
+	// - HINT: Be sure to initialize the values to 0 and empty C strings
+	//struct Contact contact = {};
 
-    // Display the title
+	// Display the title
 	printf("Contact Management System\n");
 	printf("-------------------------\n");
 
-    // Call the Contact function getName to store the values for the Name member
+	// Call the Contact function getName to store the values for the Name member
 
 
-    // Call the Contact function getAddress to store the values for the Address member
+	// Call the Contact function getAddress to store the values for the Address member
 
 
-    // Call the Contact function getNumbers to store the values for the Numbers member
+	// Call the Contact function getNumbers to store the values for the Numbers member
 
 
-    // Display Contact summary details
+	// Display Contact summary details
 
 
-    // Display Completion Message
-    printf("Structure test for Contact using functions done!\n");
-    
-    return 0;
+	// Display Completion Message
+	printf("Structure test for Contact using functions done!\n");
+
+	return 0;
 }
 
 /*  SAMPLE OUTPUT:
