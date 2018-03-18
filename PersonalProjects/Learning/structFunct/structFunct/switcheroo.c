@@ -10,8 +10,10 @@ void switcheroo(struct fullName * student1) { //takes the student1 structure and
 	return;
 }
 
-void fillSecond(struct fullName student2) {
+void fillSecond(struct fullName * student1, struct theDeal * student2) {
 	putchar('\n');
 
 	printf("Let's fill student 2...\n");
+
+	scanf(student1->first, &student2->firstSwitch);
 }

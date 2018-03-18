@@ -21,4 +21,4 @@ struct theDeal {
 //declared prototype
 void switcheroo(struct fullName *); //function prototype. WITHOUT THIS, THIS FILE DOESN'T KNOW ABOUT THE SWITCHEROO FUNCTION
 //THEREFORE CANNOT SEND IT THE DATA FROM student1
-void fillSecond(struct fullName *);
+void fillSecond(struct fullName *, struct theDeal *);

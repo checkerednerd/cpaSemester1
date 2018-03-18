@@ -10,9 +10,7 @@
 
 int main(void) {
 	struct fullName student1 = { {' '} };
-	struct fullName student2 = { {' '} };
-	struct Number num1 = { 0 };
-	struct Number num2 = { 0 };
+	struct theDeal student2 = { {' '} };
 
 	printf("Name?\n");
 	printf("First: ");
@@ -28,7 +26,7 @@ int main(void) {
 	switcheroo(&student1);
 
 	printf("First name of student 1 was: %s\n", student1.first);
-	printf("First name of student 2 was: \n");
+	printf("First name of student 2 was: %s\n", student2.firstSwitch);
 
 
 	return 0;

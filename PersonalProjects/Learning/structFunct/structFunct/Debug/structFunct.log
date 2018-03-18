@@ -1,6 +1,2 @@
 ﻿  switcheroo.c
-c:\users\abra_\onedrive\documents\github\cpasemester1\personalprojects\learning\structfunct\structfunct\switcheroo.c(13): warning C4028: formal parameter 1 different from declaration
-  structFunct.c
-  functs.c
-  Generating Code...
   structFunct.vcxproj -> C:\Users\abra_\OneDrive\Documents\GitHub\cpaSemester1\PersonalProjects\Learning\structFunct\Debug\structFunct.exe
