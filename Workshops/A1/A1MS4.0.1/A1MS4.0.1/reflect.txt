@@ -1,0 +1,15 @@
+1) I believe this assignment asked us to code a struct that holds other structs because this can
+assist in the ability to reuse some of the earlier code, minimizing the number of variables needed.
+For example, if the code were to be expanded to allow the user to enter more contacts, we could put
+the contact info into a running amalgimation (such as Contact, in our case) and overwrite the
+previous values on the Name, Address, and Numbers objects for the next cases, and repeat.
+
+2) This assignment proved to be quite difficult, as I am not entirely sure that I completely
+understood the exact requirements of each function. While my code works in the sense that it 
+is per my understanding of the instructions, I was unable to initialize the structure Contact
+as empty, and instead initialized it with the contents received from Name, Address, and 
+Numbers before displaying it. It felt that between understanding pointers, functions, and
+structures within structures, the difficulty curve was fairly steep on this one.
+
+3) It took about 12 or so hours over the course of 3 days on this one, that includes referrencing
+the chapters in the book, doing extra research online, and trying to understand the new syntax.
