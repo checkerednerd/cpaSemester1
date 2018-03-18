@@ -143,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="a1ms4.c" />
-    <ClCompile Include="contact.c" />
     <ClCompile Include="contacts.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

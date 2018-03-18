@@ -3,7 +3,7 @@ Name: Ron Vincent
 Student number: 039567078
 Email: rmvincent@myseneca.ca
 Section: K
-Date: 2018-03-11
+Date: 2018-03-18
 ----------------------------------------------
 Assignment: 1
 Milestone:  4
@@ -21,6 +21,8 @@ Milestone:  4
 
 #include "contacts.h"
 
+char choice = ' ';
+
 void clear(void) { //empties the input buffer when called
 	while (getchar() != '\n')
 		;
@@ -28,13 +30,10 @@ void clear(void) { //empties the input buffer when called
 
 // Get and store from standard input the values for Name
 // Put your code here that defines the Contact getName function:
-void getName(struct Name * name) { //currently reads from Name structure, we want to change this so it puts values into Name structure
-	
-	char choice = ' '; 
+void getName(struct Name * name) {
 
 	printf("Please enter the contact's first name: ");
 	scanf("%s", name->firstName);
-
 
 	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
@@ -50,16 +49,13 @@ void getName(struct Name * name) { //currently reads from Name structure, we wan
 
 	printf("Please enter the contact's last name: ");
 	scanf("%s", name->lastName);
-	
+
 	return;
 }
-
-
 
 // Get and store from standard input the values for Address
 // Put your code here that defines the Contact getAddress function:
 void getAddress(struct Address * address) {
-	char choice = ' ';
 
 	printf("Please enter the contact's street number: ");
 	scanf("%d", &address->streetNumber);
@@ -90,13 +86,10 @@ void getAddress(struct Address * address) {
 	return;
 }
 
-
-
 // Get and store from standard input the values for Numbers
 // Put your code here that defines the Contact getNumbers function:
 void getNumbers(struct Numbers * numbers) {
-	char choice = ' ';
-	
+
 	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
 		printf("Do you want to enter a cell phone number? (y or n): ");
