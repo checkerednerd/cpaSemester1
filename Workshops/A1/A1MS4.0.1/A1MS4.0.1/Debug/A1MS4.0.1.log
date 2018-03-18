@@ -1,4 +1,2 @@
-﻿  contacts.c
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\a1ms4.0.1\a1ms4.0.1\contacts.c(27): error C2055: expected formal parameter list, not a type list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\a1ms4.0.1\a1ms4.0.1\contacts.c(35): warning C4026: function declared with formal parameter list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\a1ms4.0.1\a1ms4.0.1\contacts.c(43): warning C4026: function declared with formal parameter list
+﻿  a1ms4.c
+  A1MS4.0.1.vcxproj -> C:\Users\checkerednerd\Documents\Github\cpaSemester1\Workshops\A1\A1MS4.0.1\Debug\A1MS4.0.1.exe

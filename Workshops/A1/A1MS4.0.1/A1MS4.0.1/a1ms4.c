@@ -21,11 +21,6 @@ Milestone:  4
 
 #include "contacts.h"
 
-void clear(void) { //empties the input buffer when called
-	while (getchar() != '\n')
-		;
-}
-
 int main(void)
 {
 	// Declare variables here:
@@ -34,13 +29,6 @@ int main(void)
 	struct Numbers phoneNum = { { ' ' },{ ' ' },{ ' ' } };
 
 	char choice = ' ';
-	int streetNum, aptNum;
-
-	int hasMid = 0;
-	int hasApt = 0;
-	int hasCell = 0;
-	int hasHome = 0;
-	int hasBus = 0;
 
 	// Create a variable of type Contact and call it something self-describing like "contact"
 	// - HINT: Be sure to initialize the values to 0 and empty C strings
@@ -51,13 +39,16 @@ int main(void)
 	printf("-------------------------\n");
 
 	// Call the Contact function getName to store the values for the Name member
-
-
+	getName(&fullName); //sends the address of fullName to the pointer argument for the getName function in contacts.c
+	printf("%s %s %s\n", fullName.firstName, fullName.middleInitial, fullName.lastName);
+	
 	// Call the Contact function getAddress to store the values for the Address member
-
-
+	getAddress(&fullAddr);
+	printf("%d\n%s\n%d\n%s\n%s\n", fullAddr.streetNumber, fullAddr.street, fullAddr.apartmentNumber, fullAddr.postalCode, fullAddr.city);
+	
 	// Call the Contact function getNumbers to store the values for the Numbers member
-
+	getNumbers(&phoneNum);
+	printf("%s\n%s\n%s\n", phoneNum.cell, phoneNum.home, phoneNum.business);
 
 	// Display Contact summary details
 
