@@ -26,5 +26,8 @@
     <ClCompile Include="functs.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="switcheroo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -13,6 +13,12 @@ struct Number {
 	int numThree;
 };
 
+struct theDeal {
+	struct fullName firstSwitch[21];
+	struct fullName lastSwitch[21];
+};
+
 //declared prototype
-void switcheroo(struct fullName student1); //function prototype. WITHOUT THIS, THIS FILE DOESN'T KNOW ABOUT THE SWITCHEROO FUNCTION
+void switcheroo(struct fullName *); //function prototype. WITHOUT THIS, THIS FILE DOESN'T KNOW ABOUT THE SWITCHEROO FUNCTION
 //THEREFORE CANNOT SEND IT THE DATA FROM student1
+void fillSecond(struct fullName *);

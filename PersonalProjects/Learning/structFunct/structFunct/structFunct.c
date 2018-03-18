@@ -25,14 +25,11 @@ int main(void) {
 
 	printf("%s %s is doing %s\n", student1.first, student1.last, student1.status);
 
-	switcheroo(student1);
+	switcheroo(&student1);
+
+	printf("First name of student 1 was: %s\n", student1.first);
+	printf("First name of student 2 was: \n");
+
+
 	return 0;
-}
-
-void switcheroo(struct fullName student1) { //takes the student1 structure and outputs the data in reverse order
-	putchar('\n');
-
-	printf("GIVE EM THE OL' SWITCHEROO!\n");
-	printf("%s doing is %s %s\n", student1.status, student1.last, student1.first);
-	return;
 }
