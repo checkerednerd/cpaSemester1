@@ -28,7 +28,7 @@ int main(void)
 
 	// Create a variable of type Contact and call it something self-describing like "contact"
 	// - HINT: Be sure to initialize the values to 0 and empty C strings
-	struct Contact contact = { {' '}, {0}, {' '} };
+	struct Contact contact = { { {' '}, {0}, {' '} } };
 
 	// Display the title
 	printf("Contact Management System\n");
