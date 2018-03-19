@@ -24,29 +24,26 @@ Milestone:  4
 
 int main(void)
 {
-	// Declare variables here:
-	struct Name fullName = { { ' ' },{ ' ' },{ ' ' } };
-	struct Address fullAddr = { 0,{ ' ' }, 0,{ ' ' },{ ' ' } };
-	struct Numbers phoneNum = { { ' ' },{ ' ' },{ ' ' } };
+	// Declare variables here
 
 	// Create a variable of type Contact and call it something self-describing like "contact"
 	// - HINT: Be sure to initialize the values to 0 and empty C strings
+	struct Contact contact = { {' '}, {0}, {' '} };
 
 	// Display the title
 	printf("Contact Management System\n");
 	printf("-------------------------\n");
 
 	// Call the Contact function getName to store the values for the Name member
-	getName(&fullName); //sends the address of fullName to the pointer argument for the getName function in contacts.c
+	getName(&contact.name); //sends the address of fullName to the pointer argument for the getName function in contacts.c
 	
 	// Call the Contact function getAddress to store the values for the Address member
-	getAddress(&fullAddr);
+	getAddress(&contact.address);
 	
 	// Call the Contact function getNumbers to store the values for the Numbers member
-	getNumbers(&phoneNum);
+	getNumbers(&contact.numbers);
 
 	// Display Contact summary details
-	struct Contact contact = {fullName, fullAddr, phoneNum};
 
 	putchar('\n');
 	printf("Contact Details\n");

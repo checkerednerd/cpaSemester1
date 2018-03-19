@@ -30,10 +30,10 @@ void clear(void) { //empties the input buffer when called
 
 // Get and store from standard input the values for Name
 // Put your code here that defines the Contact getName function:
-void getName(struct Name * name) {
+void getName(struct Name * contactName) {
 
 	printf("Please enter the contact's first name: ");
-	scanf("%s", name->firstName);
+	scanf("%s", contactName->firstName);
 
 	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
@@ -43,26 +43,26 @@ void getName(struct Name * name) {
 
 	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's middle initial(s): ");
-		scanf("%s", name->middleInitial);
+		scanf("%s", contactName->middleInitial);
 	}
 	choice = ' '; //clear choice for future use
 
 	printf("Please enter the contact's last name: ");
-	scanf("%s", name->lastName);
+	scanf("%s", contactName->lastName);
 
 	return;
 }
 
 // Get and store from standard input the values for Address
 // Put your code here that defines the Contact getAddress function:
-void getAddress(struct Address * address) {
+void getAddress(struct Address * contactAddress) {
 
 	printf("Please enter the contact's street number: ");
-	scanf("%d", &address->streetNumber);
+	scanf("%d", &contactAddress->streetNumber);
 
 	clear(); //clear input buffer for whitespace
 	printf("Please enter the contact's street name: ");
-	scanf("%[^\n]s", address->street); //reads text until new line (overrides default until whitespace)
+	scanf("%[^\n]s", contactAddress->street); //reads text until new line (overrides default until whitespace)
 
 	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
@@ -72,23 +72,23 @@ void getAddress(struct Address * address) {
 
 	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's apartment number: ");
-		scanf("%d", &address->apartmentNumber);
+		scanf("%d", &contactAddress->apartmentNumber);
 	}
 	choice = ' '; //clear choice for future use
 
 	clear(); //clear input buffer for whitespace
 	printf("Please enter the contact's postal code: ");
-	scanf("%[^\n]s", address->postalCode);
+	scanf("%[^\n]s", contactAddress->postalCode);
 
 	printf("Please enter the contact's city: ");
-	scanf("%s", address->city);
+	scanf("%s", contactAddress->city);
 
 	return;
 }
 
 // Get and store from standard input the values for Numbers
 // Put your code here that defines the Contact getNumbers function:
-void getNumbers(struct Numbers * numbers) {
+void getNumbers(struct Numbers * contactNumbers) {
 
 	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
 		clear(); //clear input buffer
@@ -98,7 +98,7 @@ void getNumbers(struct Numbers * numbers) {
 
 	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's cell phone number: ");
-		scanf("%s", numbers->cell);
+		scanf("%s", contactNumbers->cell);
 	}
 	choice = ' '; //clear choice for future use
 
@@ -110,7 +110,7 @@ void getNumbers(struct Numbers * numbers) {
 
 	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's home phone number: ");
-		scanf("%s", numbers->home);
+		scanf("%s", contactNumbers->home);
 	}
 	choice = ' ';
 
@@ -122,7 +122,7 @@ void getNumbers(struct Numbers * numbers) {
 
 	if (choice == 'y' || choice == 'Y') {
 		printf("Please enter the contact's business phone number: ");
-		scanf("%s", numbers->business);
+		scanf("%s", contactNumbers->business);
 	}
 	choice = ' ';
 

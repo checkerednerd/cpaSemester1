@@ -50,12 +50,12 @@ struct Contact {
 
 // Get and store from standard input the values for Name
 // Place your code here...
-void getName(struct Name *);
+void getName(struct Name * contactName);
 
 // Get and store from standard input the values for Address
 // Place your code here...
-void getAddress(struct Address *);
+void getAddress(struct Address * contactAddress);
 
 // Get and store from standard input the values for Numbers
 // Place your code here...
-void getNumbers(struct Numbers *);
+void getNumbers(struct Numbers * contactNumbers);
