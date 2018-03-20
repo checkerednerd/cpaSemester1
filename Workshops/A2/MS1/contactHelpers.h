@@ -39,7 +39,7 @@ int getInt(void);
 
 // getIntInRange:
 // Put function prototype below:
-int getIntInRange(int, int);
+int getIntInRange(int x, int y);
 
 // yes:
 // Put function prototype below:

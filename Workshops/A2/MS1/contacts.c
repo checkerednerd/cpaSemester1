@@ -28,6 +28,10 @@ void clear(void) { //empties the input buffer when called
 		;
 }
 
+int main(void) {
+	return 0;
+}
+
 // +-------------------------------------------------+
 // | NOTE:  Copy/Paste your Assignment-1 Milestone-4 |
 // |        function definitions below...            |
