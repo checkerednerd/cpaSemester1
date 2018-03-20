@@ -1,9 +1,9 @@
 /* -------------------------------------------
-Name:           
-Student number: 
-Email:          
-Section:        
-Date:           
+Name: Ron Vincent
+Student number: 039567078
+Email: rmvincent@myseneca.ca
+Section: K
+Date: 2018-03-20
 ----------------------------------------------
 Assignment: 2
 Milestone:  2
@@ -18,8 +18,8 @@ Milestone:  2
 // HINT: Put the header file name in double quotes so the compiler knows
 //       to look for it in the same directory/folder as this source file
 //       #include your contactHelpers header file on the next line:
-
-
+#include "contacts.h"
+#include "contactHelpers.h"
 
 //------------------------------------------------------
 // Function Definitions
@@ -40,23 +40,42 @@ void clearKeyboard(void)
 }
 
 // pause: Empty function definition goes here:
+void pause(void)
+{
 
+}
 
 
 // getInt: Empty function definition goes here:
+int getInt(void) 
+{
 
+}
 
 
 // getIntInRange: Empty function definition goes here:
+int getIntInRange(int, int)
+{
 
+}
 
 
 // yes: Empty function definition goes here:
+int yes(void)
+{
 
+}
 
 
 // menu: Empty function definition goes here:
+int menu(void)
+{
 
+}
 
 
 // ContactManagerSystem: Empty function definition goes here:
+void ContactManagerSystem(void)
+{
+
+}
