@@ -49,28 +49,28 @@ void pause(void)
 // getInt: Empty function definition goes here:
 int getInt(void) 
 {
-
+	return 0;
 }
 
 
 // getIntInRange: Empty function definition goes here:
-int getIntInRange(int, int)
+int getIntInRange(int x, int y)
 {
-
+	return 0;
 }
 
 
 // yes: Empty function definition goes here:
 int yes(void)
 {
-
+	return 0;
 }
 
 
 // menu: Empty function definition goes here:
 int menu(void)
 {
-
+	return 0;
 }
 
 

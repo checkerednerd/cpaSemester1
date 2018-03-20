@@ -19,6 +19,7 @@ Milestone:  1
 //       to look for it in the same directory/folder as this source file
 // #include your contacts header file on the next line:
 #include "contacts.h"
+#include "contactHelpers.h"
 
 char choice = ' ';
 
