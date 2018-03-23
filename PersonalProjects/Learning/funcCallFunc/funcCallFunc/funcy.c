@@ -34,6 +34,7 @@ int main(void) {
 	printf("Player one is a %s at %s\n", player1.playerJob.title, player1.playerJob.company);
 
 	if (choice == 'Y' || choice == 'y') {
+		putchar('\n');
 		printf("Player two is logged in as: %s %s\n", player2.playerName.FirstName, player2.playerName.lastName);
 		printf("Player two is a %s at %s\n", player2.playerJob.title, player2.playerJob.company);
 	}
