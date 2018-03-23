@@ -46,25 +46,56 @@ void clearKeyboard(void)
 // pause function definition goes here:
 void pause(void)
 {
-	printf("Press Enter to continue");
+	printf("(Press Enter to continue)");
 	clearKeyboard();
 }
 
 // getInt function definition goes here:
 int getInt(void)
 {
-	return 0;
+	int value = 0;
+	char NL = 'x';
+
+	while (NL != '\n') {
+		scanf("%d%c", &value, &NL); //validates that the first value is an integer
+		
+		if (NL != '\n') {
+			clearKeyboard();
+			printf("*** INVALID INTEGER *** <Please enter an integer>: ");
+		}
+	}
+	return value;
 }
 
 // getIntInRange function definition goes here:
-int getIntInRange(int x, int y)
+int getIntInRange(int min, int max)
 {
-	return 0;
+	int value = 0;
+
+	while (value < min || value > max) {
+		value = getInt();
+		
+		if (value < min || value > max) {
+			printf("*** OUT OF RANGE *** <Enter a number between %d and %d>: ", min, max);
+		}
+	}
+	return value;
 }
 
 // yes function definition goes here:
 int yes(void)
 {
+	char choice = ' ';
+	char NL = 'x';
+
+	while ((choice != 'Y' && choice != 'y' && choice != 'N' && choice != 'n' && NL != '\n') || NL != '\n') {
+		scanf("%c%c", &choice, &NL);
+
+		if (NL != '\n') {
+			clearKeyboard();
+			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+		}
+	}
 	return 0;
 }
 

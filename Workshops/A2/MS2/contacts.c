@@ -32,7 +32,7 @@ Milestone:  2
 //         #include your contactHelpers header file on the next line:
 #include "contactHelpers.h"
 
-
+int choice = ' ';
 
 // +-------------------------------------------------+
 // | NOTE:  Copy/Paste your Assignment-2 Milestone-1 |
@@ -43,17 +43,106 @@ Milestone:  2
 //        functions where applicable (ex: yes() and getInt() )
 
 // getName:
+void getName(struct Name * contactName) {
 
+	printf("Please enter the contact's first name: ");
+	scanf("%s", contactName->firstName);
+
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
+		clearKeyboard(); //clear input buffer
+		printf("Do you want to enter a middle initial(s)? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y' || choice == 'Y') {
+		printf("Please enter the contact's middle initial(s): ");
+		scanf("%s", contactName->middleInitial);
+	}
+	choice = ' '; //clear choice for future use
+
+	printf("Please enter the contact's last name: ");
+	scanf("%s", contactName->lastName);
+
+	return;
+}
 
 
 // getAddress:
+void getAddress(struct Address * contactAddress) {
 
+	printf("Please enter the contact's street number: ");
+	scanf("%d", &contactAddress->streetNumber);
+
+	clearKeyboard(); //clear input buffer for whitespace
+	printf("Please enter the contact's street name: ");
+	scanf("%[^\n]s", contactAddress->street); //reads text until new line (overrides default until whitespace)
+
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
+		clearKeyboard(); //clear input buffer
+		printf("Do you want to enter an apartment number? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y' || choice == 'Y') {
+		printf("Please enter the contact's apartment number: ");
+		scanf("%d", &contactAddress->apartmentNumber);
+	}
+	choice = ' '; //clear choice for future use
+
+	clearKeyboard(); //clear input buffer for whitespace
+	printf("Please enter the contact's postal code: ");
+	scanf("%[^\n]s", contactAddress->postalCode);
+
+	printf("Please enter the contact's city: ");
+	scanf("%s", contactAddress->city);
+
+	return;
+}
 
 
 // getNumbers:
 // NOTE:  Also modify this function so the cell number is
 //        mandatory (don't ask to enter the cell number)
+void getNumbers(struct Numbers * contactNumbers) {
 
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
+		clearKeyboard(); //clear input buffer
+		printf("Do you want to enter a cell phone number? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y' || choice == 'Y') {
+		printf("Please enter the contact's cell phone number: ");
+		scanf("%s", contactNumbers->cell);
+	}
+	choice = ' '; //clear choice for future use
+
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
+		clearKeyboard();
+		printf("Do you want to enter a home phone number? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y' || choice == 'Y') {
+		printf("Please enter the contact's home phone number: ");
+		scanf("%s", contactNumbers->home);
+	}
+	choice = ' ';
+
+	while (choice != 'n' && choice != 'y' && choice != 'N' && choice != 'Y') {
+		clearKeyboard();
+		printf("Do you want to enter a business phone number? (y or n): ");
+		choice = getchar();
+	}
+
+	if (choice == 'y' || choice == 'Y') {
+		printf("Please enter the contact's business phone number: ");
+		scanf("%s", contactNumbers->business);
+	}
+	choice = ' ';
+
+	return;
+}
 
 
 // +-------------------------------------------------+
@@ -64,3 +153,6 @@ Milestone:  2
 // +-------------------------------------------------+
 
 // getContact
+void getContact(struct Contact * contact) {
+
+}
