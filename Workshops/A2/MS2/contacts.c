@@ -1,9 +1,9 @@
 /* -------------------------------------------
-Name:
-Student number:
-Email:
-Section:
-Date:
+Name: Ron Vincent
+Student number: 039567078
+Email: rmvincent@myseneca.ca
+Section: K
+Date: 2018-03-25
 ----------------------------------------------
 Assignment: 2
 Milestone:  2
@@ -18,6 +18,7 @@ Milestone:  2
 // HINT: put the header file name in double quotes so the compiler knows
 //       to look for it in the same directory/folder as this source file
 // #include your contacts header file on the next line:
+#include "contacts.h"
 
 
 
@@ -29,6 +30,7 @@ Milestone:  2
 // HINT-2: Put the header file name in double quotes so the compiler knows
 //         to look for it in the same directory/folder as this source file
 //         #include your contactHelpers header file on the next line:
+#include "contactHelpers.h"
 
 
 

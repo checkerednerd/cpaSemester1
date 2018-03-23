@@ -3,7 +3,6 @@
 *quadruples a supplied value
 */
 
-
 static int quadrupler(int val) { //declared static to avoid linker errors, gives function global scope, namespace scope, and class scope
 	int result;
 

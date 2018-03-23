@@ -8,6 +8,8 @@
 #include<stdio.h>
 #include"quadrupler.c"
 
+int quadrupler(int);
+
 int main(void) {
 	int value, answer;
 

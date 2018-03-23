@@ -1,9 +1,9 @@
-/* ------------------------------------------------------------------
-Name:
-Student number:
-Email:
-Section:
-Date:
+/* -------------------------------------------
+Name: Ron Vincent
+Student number: 039567078
+Email: rmvincent@myseneca.ca
+Section: K
+Date: 2018-03-25
 ---------------------------------------------------------------------
 Assignment: 2
 Milestone:  2
@@ -32,18 +32,24 @@ void clearKeyboard(void);
 
 // pause:
 // Put function prototype below:
+void pause(void);
 
 // getInt:
 // Put function prototype below:
+int getInt(void);
 
 // getIntInRange:
 // Put function prototype below:
+int getIntInRange(int x, int y);
 
 // yes:
 // Put function prototype below:
+int yes(void);
 
 // menu:
 // Put function prototype below:
+int menu(void);
 
 // ContactManagerSystem:
 // Put function prototype below:
+void ContactManagerSystem(void);

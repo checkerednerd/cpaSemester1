@@ -1,9 +1,9 @@
 /* -------------------------------------------
-Name:           
-Student number: 
-Email:          
-Section:        
-Date:           
+Name: Ron Vincent
+Student number: 039567078
+Email: rmvincent@myseneca.ca
+Section: K
+Date: 2018-03-25
 ----------------------------------------------
 Assignment: 2
 Milestone:  2
@@ -19,6 +19,7 @@ Milestone:  2
 //       to look for it in the same directory/folder as this source file
 //       #include your contactHelpers header file on the next line:
 
+#include "contactHelpers.h"
 
 //------------------------------------------------------
 // Function Definitions
@@ -43,18 +44,38 @@ void clearKeyboard(void)
 }
 
 // pause function definition goes here:
-
+void pause(void)
+{
+	printf("Press Enter to continue");
+	clearKeyboard();
+}
 
 // getInt function definition goes here:
-
+int getInt(void)
+{
+	return 0;
+}
 
 // getIntInRange function definition goes here:
-
+int getIntInRange(int x, int y)
+{
+	return 0;
+}
 
 // yes function definition goes here:
-
+int yes(void)
+{
+	return 0;
+}
 
 // menu function definition goes here:
-
+int menu(void)
+{
+	return 0;
+}
 
 // ContactManagerSystem function definition goes here:
+void ContactManagerSystem(void)
+{
+
+}

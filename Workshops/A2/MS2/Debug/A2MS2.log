@@ -1,0 +1,6 @@
+﻿  a2ms2.c
+  contactHelpers.c
+  contacts.c
+  Generating Code...
+a2ms2.obj : error LNK2019: unresolved external symbol _getContact referenced in function _main
+C:\Users\checkerednerd\Documents\Github\cpaSemester1\Workshops\A2\MS2\Debug\A2MS2.exe : fatal error LNK1120: 1 unresolved externals
