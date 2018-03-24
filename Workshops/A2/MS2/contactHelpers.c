@@ -114,7 +114,9 @@ int yes(void)
 			valid = 0;
 		}
 	} while (valid == 0);
-	clearKeyboard(); //was this the key? worked after this... was hanging up in new line before it. 
+
+	clearKeyboard(); //this was the key. Worked after this, was hanging up in new line before it. 
+	return 0;
 }
 
 // menu function definition goes here:
@@ -148,9 +150,9 @@ int menu(void)
 void ContactManagerSystem(void)
 {
 	int menuChoice = -1;
-	char quitChoice = 'N';
+	int quitChoice = -1;
 
-	while (menuChoice != 0 && quitChoice != 'Y' && quitChoice != 'y') {//while menuChoice is not the exit (case 0)...
+	while (menuChoice != 0) {//while menuChoice is not the exit (case 0)...
 		menuChoice = menu(); //...get another menu choice, calls the menu() so it always shows once
 		clearKeyboard();
 
@@ -187,10 +189,15 @@ void ContactManagerSystem(void)
 			break;
 		case 0:
 			printf("Exit the program? (Y)es/(N)o: ");
-			scanf("%c", &quitChoice);
-			if (quitChoice == 'Y' || quitChoice == 'y') {
+			quitChoice = yes();
+
+			if (quitChoice == 1) {
 				printf("Contact Management System: terminated\n");
 				break;
+			}
+			else if (quitChoice == 0) {
+				menuChoice = -1;
+				putchar('\n');
 			}
 		}
 	}
