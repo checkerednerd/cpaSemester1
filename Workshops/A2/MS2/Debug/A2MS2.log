@@ -1,0 +1,6 @@
+﻿  a2ms2.c
+  contactHelpers.c
+  contacts.c
+  Generating Code...
+d:\a2\ms2\contacthelpers.c(118): warning C4715: 'yes': not all control paths return a value
+  A2MS2.vcxproj -> D:\A2\MS2\Debug\A2MS2.exe
