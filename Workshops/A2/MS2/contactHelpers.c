@@ -57,7 +57,7 @@ int getInt(void)
 	char NL = 'x';
 
 	while (NL != '\n') {
-		scanf("%d%c", &value, &NL); //validates that the first value is an integer
+		scanf(" %d%c", &value, &NL); //validates that the first value is an integer
 
 		if (NL != '\n') {
 			clearKeyboard();
@@ -90,11 +90,11 @@ int yes(void)
 	int valid = 0;
 
 	do {
-		scanf("%c%c", &choice, &NL);
+		scanf(" %c%c", &choice, &NL); //first space ignores whitespace characters
 
-		if (NL == '\n') {
-			if (choice == 'Y' || choice == 'N' || choice == 'y' || choice == 'n') {
-				valid = 1;
+		if (NL == '\n') { //first check if the second character is a newline
+			if (choice == 'Y' || choice == 'N' || choice == 'y' || choice == 'n') { 
+				valid = 1; //choice is valid
 				if (choice == 'Y' || choice == 'y') {
 					return 1;
 				}
@@ -103,19 +103,18 @@ int yes(void)
 				}
 			}
 			else {
-				clearKeyboard();
+				//used to have clearKeyboard() here, but caused some newline problems when accepting incorrect input
 				printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
 				valid = 0;
 			}
 		}
-		else {
+		else { //if second character not a new line, clears the keyboard, prints error, reprompts
 			clearKeyboard();
 			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
 			valid = 0;
 		}
-	} while (valid == 0);
+	} while (valid == 0); //runs while the valid flag is false
 
-	clearKeyboard(); //this was the key. Worked after this, was hanging up in new line before it. 
 	return 0;
 }
 
@@ -188,11 +187,11 @@ void ContactManagerSystem(void)
 			putchar('\n');
 			break;
 		case 0:
-			printf("Exit the program? (Y)es/(N)o: ");
+			printf("\nExit the program? (Y)es/(N)o: ");
 			quitChoice = yes();
 
 			if (quitChoice == 1) {
-				printf("Contact Management System: terminated\n");
+				printf("\nContact Management System: terminated\n");
 				break;
 			}
 			else if (quitChoice == 0) {
