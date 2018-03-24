@@ -1,0 +1,18 @@
+Ron Vincent - A2MS2 - 039567078
+
+1) A function is a block of code that performs a specific (cohesive) task, 
+as per the instructions specified in the block of code that makes up its body.
+It can be accessed multiple times across different modules to perform its task,
+which greatly reduces the need for redundant coding. This is beneficial to any
+programming language because A) It saves the programmer time from having to
+type out code that we have already written somewhere for that purpose, and B) it
+reduces the amount of code that makes up a program, as entire statements are
+reduced to function calls, making the program easier to read and maintain.
+
+2) I believe the "helper" function are in a different module than the rest of the
+functions on "contacts" to help differentiate the purposes of the functions within.
+The "helper" functions are more general in purpose: validating a character input,
+storing an integer, comparing to a range, etc. These functions are tools that are
+called by each other, and the functions in the "contact" module to help them do
+their own functions, which are more specific to the purpose of populating the
+structures.
