@@ -18,6 +18,9 @@
     <ClCompile Include="rpg1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="funcyTown.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stats.h">

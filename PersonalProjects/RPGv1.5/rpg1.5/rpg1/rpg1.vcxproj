@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="funcyTown.c" />
     <ClCompile Include="rpg1.c" />
   </ItemGroup>
   <ItemGroup>
