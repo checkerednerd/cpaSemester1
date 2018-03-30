@@ -26,7 +26,7 @@ void healSpell(struct Stats * player, struct Stats * enemy);
 
 int main(void) {
 	struct Stats player = { 20, 6, 1, 8, 3, 3 }; //HP, MP, ARM, CRIT, strMin, strMaxOff
-	struct Stats skele = { 20, 0, 2, 16, 2, 4 };
+	struct Stats skele = { 25, 0, 2, 16, 2, 4 };
 	time_t t;
 	int flee = 0; //rng for flee chance
 	int choice = -1;
@@ -61,9 +61,6 @@ int main(void) {
 				switch (choice) {
 				case 1: //fire
 					fireSpell(&player, &skele);
-					checkEnemy(&skele);
-					enemyAttack(&player, &skele);
-					checkPlayer(&player);
 					break;
 
 				case 2: //ice
@@ -82,6 +79,7 @@ int main(void) {
 				default:
 					system("cls");
 				}
+
 			} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
 
 			break;

@@ -97,20 +97,39 @@ void enemyAttack(struct Stats * player, struct Stats * enemy) { //function for e
 
 void checkPlayer(struct Stats * player) {
 	if (player->HP <= 0) { //if skeleton has defeated you
-		system("cls");
+		//system("cls");
 		printf("You were defeated...\n");
 	}
 }
 
 void checkEnemy(struct Stats * enemy) {
 	if (enemy->HP <= 0) { //if you have defeated skeleton, skeleton will not attack
-		system("cls");
+		//system("cls");
 		printf("Skeleton defeated...\n");
 	}
 }
 
 void fireSpell(struct Stats * player, struct Stats * enemy) {
-	printf("You begin to chant under your breath...\n");
+	if (player->MP >= 3) {
+		printf("You begin to chant under your breath...\n");
+		printf("A blistering wave of heat takes hold...\n");
+		printf("A plume of flames engulfs the enemy...\n");
+		printf("-----------------------------------\n");
+
+		enemy->HP -= 8;
+		player->MP -= 3;
+
+		printf("The enemy has taken 8 direct damage.\n");
+		printf("The skeleton has %d HP remaining...\n", enemy->HP);
+		printf("-----------------------------------\n");
+
+		checkEnemy(enemy);
+		enemyAttack(player, enemy);
+	}
+	else {
+		printf("Not enough Magic Points...\n");
+		printf("-----------------------------------\n");
+	}
 
 	return;
 }
