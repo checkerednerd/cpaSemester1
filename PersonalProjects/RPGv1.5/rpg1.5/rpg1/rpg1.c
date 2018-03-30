@@ -1,6 +1,9 @@
 /*Ron Vincent
-*2018-02-27
-*A program to replicate a simple RPG battle system
+*2018-03-30
+*A program to replicate a simple RPG battle system, update to v1.0.0
+Implements structures from stats.h - DONE
+Implements functions
+Implements magic
 */
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -8,13 +11,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include"stats.h"
 
 int main(void) {
-	int usrHP = 20;
-	int mp = 2;
-	int usrARM = 1;
-	int skeHP = 20;
-	int skeARM = 2;
+	struct Stats player = { 20, 2, 1 };
+	struct Stats skele = { 20, 0, 2 };
 
 	int dmg = 0; //rang for damage roll
 	int crit = 0; //rng for crit chance
@@ -52,33 +53,33 @@ int main(void) {
 				printf("SSHHHHUNK! A critical hit!\n"); //20% chance of a critical for double damage (rolls 0-4)
 				dmg *= 2;
 			}
-			dmg -= skeARM;
+			dmg -= skele.ARM;
 			printf("The skeleton took %d points of damage.\n", abs(dmg));
-			skeHP -= abs(dmg); //HP subtracts to ABSOLUTE value of damage (if armour > damage, the damage would restore HP otherwise)
-			printf("The skeleton has %d HP remaining...\n", skeHP);
+			skele.HP -= abs(dmg); //HP subtracts to ABSOLUTE value of damage (if armour > damage, the damage would restore HP otherwise)
+			printf("The skeleton has %d HP remaining...\n", skele.HP);
 			printf("\n");
 
 			/*insert code block to validate if you defeated skeleton before it hits you back
 			skeleton should only hit you back if you did not defeat it
 			can put skeleton attack code block into seperate function*/
-			if (skeHP > 0) { //if skeleton is not defeated, it will attack
+			if (skele.HP > 0) { //if skeleton is not defeated, it will attack
 				dmg = rand() % 4 + 2; //2-5 for skeleton
-				printf("The skeleton swings its rotting hang at you...\n");
+				printf("The skeleton swings its rotting hand at you...\n");
 				printf("The skeleton dealt %d of damage against your armor...\n", dmg);
-				dmg -= usrARM;
+				dmg -= player.ARM;
 				printf("You took %d points of damage.\n", abs(dmg));
-				usrHP -= abs(dmg);
+				player.HP -= abs(dmg);
 
-				printf("You have %d HP remaining...\n", usrHP);
+				printf("You have %d HP remaining...\n", player.HP);
 				printf("\n");
 
-				if (usrHP <= 0) { //if skeleton has defeated you
+				if (player.HP <= 0) { //if skeleton has defeated you
 					system("cls");
 					printf("You were defeated...\n");
 				}
 
 			}
-			else if (skeHP <= 0) { //if you have defeated skeleton, skeleton will not attack
+			else if (skele.HP <= 0) { //if you have defeated skeleton, skeleton will not attack
 				system("cls");
 				printf("Skeleton defeated...\n");
 			}
@@ -89,39 +90,39 @@ int main(void) {
 			break;
 
 		case 3: //Defend on your turn, taking reduced damage from skeleton
-			usrARM += 2;
+			player.ARM += 2;
 			system("cls");
 			printf("You bolster your stance defensively...\n");
 			printf("Armor +2 for the rest of the turn.\n");
 
-			if (skeHP > 0) { //if skeleton is not defeated, it will attack
+			if (skele.HP > 0) { //if skeleton is not defeated, it will attack
 				dmg = rand() % 4 + 2; //2-5 for skeleton
-				printf("The skeleton swings its rotting hang at you...\n");
+				printf("The skeleton swings its rotting hand at you...\n");
 				printf("The skeleton dealt %d of damage against your armor...\n", dmg);
 
-				if (dmg < usrARM) { //if damage is lower than armour, make damage 0
+				if (dmg < player.ARM) { //if damage is lower than armour, make damage 0
 					dmg = 0;
 				}
 				else { //else damage will mitigated by armour
-					dmg -= usrARM; 
+					dmg -= player.ARM; 
 				}
 
 				printf("You took %d points of damage.\n", dmg);
-				usrHP -= dmg;
-				printf("You have %d HP remaining...\n", usrHP);
+				player.HP -= dmg;
+				printf("You have %d HP remaining...\n", player.HP);
 				printf("\n");
 
-				if (usrHP <= 0) { //if skeleton has defeated you
+				if (player.HP <= 0) { //if skeleton has defeated you
 					system("cls");
 					printf("You were defeated...\n");
 				}
 
 			}
-			else if (skeHP <= 0) { //if you have defeated skeleton, skeleton will not attack
+			else if (skele.HP <= 0) { //if you have defeated skeleton, skeleton will not attack
 				system("cls");
 				printf("Skeleton defeated...\n");
 			}
-			usrARM -= 2;
+			player.ARM -= 2;
 			break;
 
 		case 4: //Flee battle
@@ -140,7 +141,7 @@ int main(void) {
 			system("cls");
 		}
 
-	} while (flee == 0 && usrHP > 0 && skeHP > 0); //terminates when user flees or usr/skeHP is 0 or less
+	} while (flee == 0 && player.HP > 0 && skele.HP > 0); //terminates when user flees or usr/skele.HP is 0 or less
 
 	return 0;
 }
