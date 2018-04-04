@@ -1,9 +1,9 @@
 /* -------------------------------------------
-Name:           
-Student number: 
-Email:          
-Section:        
-Date:           
+Name: Ron Vincent
+Student number: 039567078
+Email: rmvincent@myseneca.ca
+Section: K
+Date: 2018-03-27
 ----------------------------------------------
 Assignment: 2
 Milestone:  3
@@ -16,7 +16,7 @@ Milestone:  3
 // This source file needs to "know about" the SYSTEM string library functions.
 // HINT: The library name is string.h.
 //       #include the string.h header file on the next line:
-
+#include <string.h>
 
 
 // ----------------------------------------------------------
