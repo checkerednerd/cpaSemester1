@@ -10,11 +10,11 @@
 // ----------------------------------------------------------------------------
 
 /* -------------------------------------------
-Name:
-Student number:
-Email:
-Section:
-Date:
+Name: Ron Vincent
+Student number: 039567078
+Email: rmvincent@myseneca.ca
+Section: K
+Date: 2018-04-07
 ----------------------------------------------
 Assignment: 2
 Milestone:  4
@@ -31,12 +31,34 @@ Milestone:  4
 // +-------------------------------------------------+
 
 // Structure type Name declaration
+struct Name {
+	char firstName[31];
+	char middleInitial[7];
+	char lastName[36];
+};
 
 // Structure type Address declaration
+struct Address {
+	int streetNumber;
+	char street[40];
+	int apartmentNumber;
+	char postalCode[8];
+	char city[40];
+};
 
 // Structure type Numbers declaration
+struct Numbers {
+	char cell[11];
+	char home[11];
+	char business[11];
+};
 
 // Structure type Contact declaration
+struct Contact {
+	struct Name name;
+	struct Address address;
+	struct Numbers numbers;
+};
 
 
 //------------------------------------------------------
@@ -49,13 +71,16 @@ Milestone:  4
 // +-------------------------------------------------+
 
 // getName:
+void getName(struct Name * contactName);
 
 // getAddress:
+void getAddress(struct Address * contactAddress);
 
 // getNumbers:
+void getNumbers(struct Numbers * contactNumbers);
 
 // getContact:
-
+void getContact(struct Contact * contact);
 
 
 // ----------------------------------------------------------------------------
