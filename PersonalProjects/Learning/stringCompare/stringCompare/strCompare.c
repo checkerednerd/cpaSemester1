@@ -56,7 +56,7 @@ int main(void) {
 		strcat(firstNames, recordList[i].full.first);
 	}
 
-	printf("Both first names are: %s\n", firstNames);
+	printf("All first names are: %s\n", firstNames);
 
 	for (compareTo = 0; compareTo < RECORDSIZE; compareTo++) { //iterates the compareTo to compare i to every compareTo
 		if (strcmp(recordList[i].numbers.cell, recordList[compareTo].numbers.cell) == 0) { //only prints a match if it didn't match itself
@@ -64,6 +64,8 @@ int main(void) {
 				printf("%s's cell phone number matched %s's.\n", recordList[i].full.first, recordList[compareTo].full.first);
 			}
 		}
+		printf("%s vs. %s\n", recordList[i].full.first, recordList[compareTo].full.first);
+		printf("%d\n", strcmp(recordList[i].numbers.cell, recordList[compareTo].numbers.cell));
 	}
 
 	return 0;
