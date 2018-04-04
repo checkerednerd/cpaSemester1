@@ -25,7 +25,7 @@ Milestone:  4
 
 // ----------------------------------------------------------
 // define MAXCONTACTS for sizing contacts array (5):
-
+#define MAXCONTACTS 5
 
 
 //------------------------------------------------------
@@ -150,6 +150,24 @@ void ContactManagerSystem(void)
 {
 	int menuChoice = -1;
 	int quitChoice = -1;
+	struct Contact contactList[MAXCONTACTS] = { //create an array of structs, an array of Contact structurs called contactList
+		{ { "Rick", { '\0' }, "Grimes" },
+	{ 11, "Trailer Park", 0, "A7A 2J2", "King City" },
+	{ "4161112222", "4162223333", "4163334444" } },
+	{
+		{ "Maggie", "R.", "Greene" },
+	{ 55, "Hightop House", 0, "A9A 3K3", "Bolton" },
+	{ "9051112222", "9052223333", "9053334444" } },
+	{
+		{ "Morgan", "A.", "Jones" },
+	{ 77, "Cottage Lane", 0, "C7C 9Q9", "Peterborough" },
+	{ "7051112222", "7052223333", "7053334444" } },
+	{
+		{ "Sasha", { '\0' }, "Williams" },
+	{ 55, "Hightop House", 0, "A9A 3K3", "Bolton" },
+	{ "9052223333", "9052223333", "9054445555" } },
+	}; 
+
 
 	while (menuChoice != 0) {//while menuChoice is not the exit (case 0)...
 		menuChoice = menu(); //...get another menu choice, calls the menu() so it always shows once
@@ -225,8 +243,10 @@ void getTenDigitPhone(char telNum[])
 }
 
 // findContactIndex:
-int findContactIndex(const struct Contact contacts[], int size, const char cellNum[])
+int findContactIndex(const struct Contact contactList[], int size, const char cellNum[]) //an array of structs
 {
+	int i = 0;
+
 	return -1;
 }
 
@@ -249,38 +269,38 @@ void displayContact(const struct Contact* contact)
 }
 
 // displayContacts:
-void displayContacts(const struct Contact[], int val)
+void displayContacts(const struct Contact contactList[], int val) //an array of structs
 {
 
 }
 
 // searchContacts:
-void searchContacts(const struct Contact[], int val)
+void searchContacts(const struct Contact contactList[], int val) //an array of structs
 {
 
 }
 
 // addContact:
-void addContact(struct Contact[], int val)
+void addContact(struct Contact contactList[], int val) //an array of structs
 {
 
 }
 
 // updateContact:
-void updateContact(struct Contact[], int val)
+void updateContact(struct Contact contactList[], int val) //an array of structs
 {
 
 }
 
 
 // deleteContact:
-void deleteContact(struct Contact[], int val)
+void deleteContact(struct Contact contactList[], int val) //an array of structs
 {
 
 }
 
 // sortContacts:
-void sortContacts(struct Contact[], int val)
+void sortContacts(struct Contact contactList[], int val) //an array of structs
 {
-
+	//optional
 }

@@ -65,19 +65,19 @@ void displayContactFooter(int val);
 void displayContact(const struct Contact* contact);
 
 // displayContacts:
-void displayContacts(const struct Contact[], int val);
+void displayContacts(const struct Contact contactList[], int val); //parameter names contact[] and val just placeholders
 
 // searchContacts:
-void searchContacts(const struct Contact[], int val);
+void searchContacts(const struct Contact contactList[], int val); //an array of contacts, an array of structs
 
 // addContact:
-void addContact(struct Contact[], int val);
+void addContact(struct Contact contactList[], int val); //an array of structs
 
 // updateContact:
-void updateContact(struct Contact[], int val);
+void updateContact(struct Contact contactList[], int val); //an array of structs
 
 // deleteContact:
-void deleteContact(struct Contact[], int val);
+void deleteContact(struct Contact contactList[], int val); //an array of structs
 
 // sortContacts:
-void sortContacts(struct Contact[], int val);
+void sortContacts(struct Contact contactList[], int val); //an array of structs
