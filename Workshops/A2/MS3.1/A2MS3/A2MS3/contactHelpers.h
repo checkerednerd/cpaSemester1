@@ -66,32 +66,32 @@ void displayContactHeader(void);
 
 // displayContactFooter:
 // put function prototype here:
-void displayContactFooter(int);
+void displayContactFooter(int val);
 
 // displayContact:
 // put function prototype here:
-void displayContact(const struct Contact*);
+void displayContact(const struct Contact* contact);
 
 // displayContacts:
 // put function prototype here:
-void displayContacts(const struct Contact[], int);
+void displayContacts(const struct Contact[], int val);
 
 // searchContacts:
 // put function prototype here:
-void searchContacts(const struct Contact[], int);
+void searchContacts(const struct Contact[], int val);
 
 // addContact:
 // put function prototype here:
-void addContact(struct Contact[], int);
+void addContact(struct Contact[], int val);
 
 // updateContact:
 // put function prototype here:
-void updateContact(struct Contact[], int);
+void updateContact(struct Contact[], int val);
 
 // deleteContact:
 // put function prototype here:
-void deleteContact(struct Contact[], int);
+void deleteContact(struct Contact[], int val);
 
 // sortContacts:
 // put function prototype here:
-void sortContacts(struct Contact[], int);
+void sortContacts(struct Contact[], int val);

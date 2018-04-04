@@ -1,7 +1,7 @@
 ﻿  contactHelpers.c
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(70): warning C4013: 'clearKeyboard' undefined; assuming extern returning int
-  contacts.c
-  Generating Code...
-contactHelpers.obj : error LNK2019: unresolved external symbol _clearKeyboard referenced in function _getTenDigitPhone
-MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\checkerednerd\Documents\Github\cpaSemester1\Workshops\A2\MS3.1\A2MS3\Debug\A2MS3.exe : fatal error LNK1120: 2 unresolved externals
+c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(258): error C2055: expected formal parameter list, not a type list
+c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(266): error C2055: expected formal parameter list, not a type list
+c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(274): error C2055: expected formal parameter list, not a type list
+c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(282): error C2055: expected formal parameter list, not a type list
+c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(290): error C2055: expected formal parameter list, not a type list
+c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(298): error C2055: expected formal parameter list, not a type list
