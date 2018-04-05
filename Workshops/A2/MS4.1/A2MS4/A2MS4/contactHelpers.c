@@ -248,7 +248,8 @@ int findContactIndex(const struct Contact contactList[], int size, const char ce
 	int matchIndex = 0;
 
 	for (i = 0; i < size; i++) { //cycles through the array for a match, if found, stores index in matchIndex
-		if (strcmp(cellNum, contactList[i].numbers.cell) == 0) {
+		printf("%s vs. %s\n", cellNum, contactList[i].numbers.cell); //debugging
+		if (strcmp(cellNum, contactList[i].numbers.cell) == 0) { //looks like its matching (based on debugging), but isn't registering the match...
 			match = 1;
 			matchIndex = i;
 		}
@@ -259,8 +260,12 @@ int findContactIndex(const struct Contact contactList[], int size, const char ce
 
 	if (match == 1) { //if a match is found, return matchIndex
 		return matchIndex;
+		printf("match\n");
+		printf("%s", cellNum);
 	}
 	else {
+		printf("no match\n");
+		printf("%s", cellNum);
 		return -1;
 	}
 }
@@ -337,10 +342,9 @@ void searchContacts(const struct Contact contactList[], int size) //an array of 
 	char numSearch[50];
 	printf("Enter the cell number for the contact: ");
 
-	//for (i = 0; i < size; i++) { //not right... have to enter 5 10 digit phone numbers
-	getTenDigitPhone(numSearch);
+	getTenDigitPhone(numSearch); //does not return anything, just holds you up until you enter a valid entry
+	findContactIndex(contactList, MAXCONTACTS, numSearch);
 	putchar('\n');
-	//}
 }
 
 // addContact:
