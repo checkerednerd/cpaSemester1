@@ -28,6 +28,9 @@ struct Records {
 int main(void) {
 	int i = 0;
 	int compareTo = 0;
+	int match = 0;
+	int matchIndex = 0;
+	char search[20];
 	char firstNames[41] = "";
 
 	printf("Here we go!\n");
@@ -57,15 +60,33 @@ int main(void) {
 	}
 
 	printf("All first names are: %s\n", firstNames);
+	printf("\n");
+
+	i = 0;
 
 	for (compareTo = 0; compareTo < RECORDSIZE; compareTo++) { //iterates the compareTo to compare i to every compareTo
+		printf("%s's cell phone vs. %s's cell phone\n", recordList[i].full.first, recordList[compareTo].full.first);
 		if (strcmp(recordList[i].numbers.cell, recordList[compareTo].numbers.cell) == 0) { //only prints a match if it didn't match itself
 			if (i != compareTo) {
-				printf("%s's cell phone number matched %s's.\n", recordList[i].full.first, recordList[compareTo].full.first);
+				printf("%s's cell phone number matched %s's: %s.\n", recordList[i].full.first, recordList[compareTo].full.first, recordList[compareTo].numbers.cell);
 			}
 		}
-		printf("%s vs. %s\n", recordList[i].full.first, recordList[compareTo].full.first);
-		printf("%d\n", strcmp(recordList[i].numbers.cell, recordList[compareTo].numbers.cell));
+		else {
+			printf("Not a match...\n");
+		}
+	}
+
+	i = 0;
+	printf("\nEnter a cell phone number to search: ");
+	scanf("%s", &search);
+
+	for (compareTo = 0; compareTo < RECORDSIZE; compareTo++) {
+		if (strcmp(search, recordList[compareTo].numbers.cell) == 0) {
+			printf("Match was found at %d\n", compareTo);
+		}
+		else {
+			printf("Not a match...\n");
+		}
 	}
 
 	return 0;
