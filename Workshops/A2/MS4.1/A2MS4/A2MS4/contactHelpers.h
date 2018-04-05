@@ -56,16 +56,16 @@ void getTenDigitPhone(char[]);
 int findContactIndex(const struct Contact[], int, const char[]);
 
 // displayContactHeader:
-void displayContactHeader(void);
+void displayContactHeader(void); //done
 
 // displayContactFooter:
-void displayContactFooter(int val);
+void displayContactFooter(int size); //done
 
 // displayContact:
-void displayContact(const struct Contact* contact);
+void displayContact(const struct Contact * contact); //done
 
 // displayContacts:
-void displayContacts(const struct Contact contactList[], int val); //parameter names contact[] and val just placeholders
+void displayContacts(const struct Contact contactList[], int size); //parameter names contact[] and val just placeholders
 
 // searchContacts:
 void searchContacts(const struct Contact contactList[], int val); //an array of contacts, an array of structs

@@ -150,6 +150,7 @@ void ContactManagerSystem(void)
 {
 	int menuChoice = -1;
 	int quitChoice = -1;
+
 	struct Contact contactList[MAXCONTACTS] = { //create an array of structs, an array of Contact structurs called contactList
 		{ { "Rick", { '\0' }, "Grimes" },
 	{ 11, "Trailer Park", 0, "A7A 2J2", "King City" },
@@ -166,18 +167,17 @@ void ContactManagerSystem(void)
 		{ "Sasha", { '\0' }, "Williams" },
 	{ 55, "Hightop House", 0, "A9A 3K3", "Bolton" },
 	{ "9052223333", "9052223333", "9054445555" } },
-	}; 
+	};
 
 
 	while (menuChoice != 0) {//while menuChoice is not the exit (case 0)...
 		menuChoice = menu(); //...get another menu choice, calls the menu() so it always shows once
 		clearKeyboard();
+		int size = 0;
 
 		switch (menuChoice) {
 		case 1:
-			printf("\n<<< Feature 1 is unavailable >>>\n\n");
-			pause();
-			putchar('\n');
+			displayContacts(contactList, MAXCONTACTS);
 			break;
 		case 2:
 			printf("\n<<< Feature 2 is unavailable >>>\n\n");
@@ -246,32 +246,90 @@ void getTenDigitPhone(char telNum[])
 int findContactIndex(const struct Contact contactList[], int size, const char cellNum[]) //an array of structs
 {
 	int i = 0;
+	int match = 0;
+	int matchIndex = 0;
 
-	return -1;
+	for (i = 0; i < size; i++) { //cycles through the array for a match, if found, stores index in matchIndex
+		if (strcmp(cellNum, contactList[i].numbers.cell) == 0) {
+			match = 1;
+			matchIndex = i;
+		}
+		else {
+			match = 0;
+		}
+	}
+
+	if (match == 1) { //if a match is found, return matchIndex
+		return matchIndex;
+	}
+	else {
+		return -1;
+	}
 }
 
 // displayContactHeader
 void displayContactHeader(void)
 {
+	printf("+-----------------------------------------------------------------------------+\n");
+	printf("|                              Contacts Listing                               |\n");
+	printf("+-----------------------------------------------------------------------------+\n");
 
+	return;
 }
 
 // displayContactFooter
-void displayContactFooter(int val)
+void displayContactFooter(int size)
 {
-
+	printf("+-----------------------------------------------------------------------------+\n");
+	printf("Total contacts: %d", size);
+	printf("\n\n");
 }
 
 // displayContact:
 void displayContact(const struct Contact* contact)
 {
+	if (strlen(contact->name.middleInitial) > 0) { //if there is a middle initial
 
+		printf(" %s %s %s\n", contact->name.firstName, contact->name.middleInitial, contact->name.lastName);
+		printf("    C: %-10s    H: %-10s    B: %-10s\n", contact->numbers.cell, contact->numbers.home, contact->numbers.business);
+
+		if (contact->address.apartmentNumber > 0) { //if there is an apartment number
+			printf("       %d %s, Apt# %d, %s, %s\n", contact->address.streetNumber, contact->address.street, contact->address.apartmentNumber, contact->address.city, contact->address.postalCode);
+		}
+		else { //if no apartment number
+			printf("       %d %s, %s, %s\n", contact->address.streetNumber, contact->address.street, contact->address.city, contact->address.postalCode);
+		}
+	}
+
+	else { //if there is no middle initial
+
+		printf(" %s %s\n", contact->name.firstName, contact->name.lastName);
+		printf("    C: %-10s    H: %-10s    B: %-10s\n", contact->numbers.cell, contact->numbers.home, contact->numbers.business);
+
+		if (contact->address.apartmentNumber > 0) { //if there is an apartment number
+			printf("       %d %s, Apt# %d, %s, %s\n", contact->address.streetNumber, contact->address.street, contact->address.apartmentNumber, contact->address.city, contact->address.postalCode);
+		}
+		else { //if no apartment number
+			printf("       %d %s, %s, %s\n", contact->address.streetNumber, contact->address.street, contact->address.city, contact->address.postalCode);
+		}
+	}
 }
 
 // displayContacts:
-void displayContacts(const struct Contact contactList[], int val) //an array of structs
+void displayContacts(const struct Contact contactList[], int size) //an array of structs
 {
+	int i = 0;
+	int validContacts = 0;
 
+	displayContactHeader();
+	//put the rest
+	for (i = 0; i < size; i++) { //for each contactList entry up until size
+		if (strlen(contactList[i].numbers.cell) > 0) { //validate for proper cell phone number
+			displayContact(&contactList[i]);
+			validContacts++;
+		}
+	}
+	displayContactFooter(validContacts);
 }
 
 // searchContacts:
