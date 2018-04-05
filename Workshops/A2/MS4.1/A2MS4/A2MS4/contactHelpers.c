@@ -195,9 +195,7 @@ void ContactManagerSystem(void)
 			putchar('\n');
 			break;
 		case 5:
-			printf("\n<<< Feature 5 is unavailable >>>\n\n");
-			pause();
-			putchar('\n');
+			searchContacts(contactList, MAXCONTACTS);
 			break;
 		case 6:
 			printf("\n<<< Feature 6 is unavailable >>>\n\n");
@@ -231,7 +229,7 @@ void getTenDigitPhone(char telNum[])
 	int needInput = 1;
 
 	while (needInput == 1) {
-		scanf("%10s", telNum);
+		scanf("%s", telNum); //changed %10s to %s, otherwise only validated less than 10, more than 10 always went through
 		clearKeyboard();
 
 		// (String Length Function: validate entry of 10 characters)
@@ -333,32 +331,39 @@ void displayContacts(const struct Contact contactList[], int size) //an array of
 }
 
 // searchContacts:
-void searchContacts(const struct Contact contactList[], int val) //an array of structs
+void searchContacts(const struct Contact contactList[], int size) //an array of structs
 {
+	int i = 0;
+	char numSearch[50];
+	printf("Enter the cell number for the contact: ");
 
+	//for (i = 0; i < size; i++) { //not right... have to enter 5 10 digit phone numbers
+	getTenDigitPhone(numSearch);
+	putchar('\n');
+	//}
 }
 
 // addContact:
-void addContact(struct Contact contactList[], int val) //an array of structs
+void addContact(struct Contact contactList[], int size) //an array of structs
 {
 
 }
 
 // updateContact:
-void updateContact(struct Contact contactList[], int val) //an array of structs
+void updateContact(struct Contact contactList[], int size) //an array of structs
 {
 
 }
 
 
 // deleteContact:
-void deleteContact(struct Contact contactList[], int val) //an array of structs
+void deleteContact(struct Contact contactList[], int size) //an array of structs
 {
 
 }
 
 // sortContacts:
-void sortContacts(struct Contact contactList[], int val) //an array of structs
+void sortContacts(struct Contact contactList[], int size) //an array of structs
 {
 	//optional
 }

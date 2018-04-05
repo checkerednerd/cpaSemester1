@@ -68,16 +68,16 @@ void displayContact(const struct Contact * contact); //done
 void displayContacts(const struct Contact contactList[], int size); //parameter names contact[] and val just placeholders
 
 // searchContacts:
-void searchContacts(const struct Contact contactList[], int val); //an array of contacts, an array of structs
+void searchContacts(const struct Contact contactList[], int size); //an array of contacts, an array of structs
 
 // addContact:
-void addContact(struct Contact contactList[], int val); //an array of structs
+void addContact(struct Contact contactList[], int size); //an array of structs
 
 // updateContact:
-void updateContact(struct Contact contactList[], int val); //an array of structs
+void updateContact(struct Contact contactList[], int size); //an array of structs
 
 // deleteContact:
-void deleteContact(struct Contact contactList[], int val); //an array of structs
+void deleteContact(struct Contact contactList[], int size); //an array of structs
 
 // sortContacts:
-void sortContacts(struct Contact contactList[], int val); //an array of structs
+void sortContacts(struct Contact contactList[], int size); //an array of structs
