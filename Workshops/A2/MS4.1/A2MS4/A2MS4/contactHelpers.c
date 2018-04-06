@@ -21,6 +21,7 @@ Milestone:  4
 // ----------------------------------------------------------
 // Include your contactHelpers header file on the next line:
 #include "contactHelpers.h"
+#include "contacts.h"
 
 
 // ----------------------------------------------------------

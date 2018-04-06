@@ -12,6 +12,7 @@ Milestone:  4
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <string.h>
 
 // +-------------------------------------------------+
 // | NOTE:  Include additional header files...       |
@@ -83,6 +84,7 @@ void getNumbers(struct Numbers * contactNumbers) {
 
 	printf("Please enter the contact's cell phone number: ");
 	getTenDigitPhone(examplePhone);
+	strcpy(contactNumbers->cell, examplePhone); //forgot to add these in MS3, was validating, but not storing anywhere
 
 	while (choice != 1 && choice != 0) {
 		printf("Do you want to enter a home phone number? (y or n): ");
@@ -92,6 +94,7 @@ void getNumbers(struct Numbers * contactNumbers) {
 	if (choice == 1) {
 		printf("Please enter the contact's home phone number: ");
 		getTenDigitPhone(examplePhone);
+		strcpy(contactNumbers->home, examplePhone);
 	}
 	choice = -1;
 
@@ -103,6 +106,7 @@ void getNumbers(struct Numbers * contactNumbers) {
 	if (choice == 1) {
 		printf("Please enter the contact's business phone number: ");
 		getTenDigitPhone(examplePhone);
+		strcpy(contactNumbers->business, examplePhone);
 	}
 	choice = -1;
 
