@@ -174,14 +174,17 @@ void ContactManagerSystem(void)
 	while (menuChoice != 0) {//while menuChoice is not the exit (case 0)...
 		menuChoice = menu(); //...get another menu choice, calls the menu() so it always shows once
 		clearKeyboard();
-		int size = 0;
 
 		switch (menuChoice) {
 		case 1:
 			displayContacts(contactList, MAXCONTACTS);
+			pause();
+			putchar('\n');
 			break;
 		case 2:
 			addContact(contactList, MAXCONTACTS);
+			pause();
+			putchar('\n');
 			break;
 		case 3:
 			printf("\n<<< Feature 3 is unavailable >>>\n\n");
@@ -322,7 +325,6 @@ void displayContacts(const struct Contact contactList[], int size) //an array of
 // searchContacts:
 void searchContacts(const struct Contact contactList[], int size) //an array of structs
 {
-	int i = 0;
 	char numSearch[50];
 	int matchIndex = -1;
 
@@ -333,6 +335,7 @@ void searchContacts(const struct Contact contactList[], int size) //an array of 
 	putchar('\n');
 
 	if (matchIndex != -1) {
+		printf("Contact found:\n");
 		displayContact(&contactList[matchIndex]);
 		putchar('\n');
 	}
@@ -352,18 +355,15 @@ void addContact(struct Contact contactList[], int size) //an array of structs
 
 	for (i = 0; i < size; i++) {
 		if (strlen(contactList[i].numbers.cell) == 0) { //search if an empty string
-			//code here
 			emptyIndex = i;
-			printf("debug: loop works can add at %d\n\n", emptyIndex); //debug
 		}
 	}
 	if (emptyIndex == -1) {
-		printf("*** ERROR: The contact list is full! ***\n\n");
+		printf("*** ERROR: The contact list is full! ***\n");
 	}
 	else {
-		printf("Adding at position %d\n\n", emptyIndex);
 		getContact(&contactList[emptyIndex]);
-		printf("--- New contact added! at %d---\n\n", emptyIndex);
+		printf("--- New contact added! ---\n");
 	}
 }
 
