@@ -245,11 +245,10 @@ int findContactIndex(const struct Contact contactList[], int size, const char ce
 {
 	int i = 0;
 	int match = 0;
-	int matchIndex = 0;
+	int matchIndex = -1;
 
-	for (i = 0; i < size; i++) { //cycles through the array for a match, if found, stores index in matchIndex
-		printf("%s vs. %s\n", cellNum, contactList[i].numbers.cell); //debugging
-		if (strcmp(cellNum, contactList[i].numbers.cell) == 0) { //looks like its matching (based on debugging), but isn't registering the match...
+	for (i = 0; i < size; i++) {
+		if (strcmp(cellNum, contactList[i].numbers.cell) == 0) {
 			match = 1;
 			matchIndex = i;
 		}
@@ -257,15 +256,12 @@ int findContactIndex(const struct Contact contactList[], int size, const char ce
 			match = 0;
 		}
 	}
-
 	if (match == 1) { //if a match is found, return matchIndex
+		printf("DEBUG, returned %d\n\n", matchIndex); //REMOVE ON SUBMIT
 		return matchIndex;
-		printf("match\n");
-		printf("%s", cellNum);
 	}
 	else {
-		printf("no match\n");
-		printf("%s", cellNum);
+		printf("DEBUG, returned %d\n\n", matchIndex); //REMOVE ON SUBMIT
 		return -1;
 	}
 }
