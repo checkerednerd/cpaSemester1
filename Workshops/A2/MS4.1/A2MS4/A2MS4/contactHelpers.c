@@ -180,9 +180,7 @@ void ContactManagerSystem(void)
 			displayContacts(contactList, MAXCONTACTS);
 			break;
 		case 2:
-			printf("\n<<< Feature 2 is unavailable >>>\n\n");
-			pause();
-			putchar('\n');
+			addContact(contactList, MAXCONTACTS);
 			break;
 		case 3:
 			printf("\n<<< Feature 3 is unavailable >>>\n\n");
@@ -348,7 +346,24 @@ void searchContacts(const struct Contact contactList[], int size) //an array of 
 // addContact:
 void addContact(struct Contact contactList[], int size) //an array of structs
 {
+	int i;
+	int emptyIndex = -1;
 
+	for (i = 0; i < size; i++) {
+		if (strlen(contactList[i].numbers.cell) == 0) { //search if an empty string
+			//code here
+			emptyIndex = i;
+			printf("debug: loop works can add at %d\n\n", emptyIndex); //debug
+		}
+	}
+	if (emptyIndex == -1) {
+		printf("*** ERROR: The contact list is full! ***\n\n");
+	}
+	else {
+		printf("Adding at position %d\n\n", emptyIndex);
+		getContact(&contactList[emptyIndex]);
+		printf("--- New contact added! at %d---\n\n", emptyIndex);
+	}
 }
 
 // updateContact:
