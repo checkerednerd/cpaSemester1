@@ -244,26 +244,15 @@ void getTenDigitPhone(char telNum[])
 int findContactIndex(const struct Contact contactList[], int size, const char cellNum[]) //an array of structs
 {
 	int i = 0;
-	int match = 0;
 	int matchIndex = -1;
 
 	for (i = 0; i < size; i++) {
 		if (strcmp(cellNum, contactList[i].numbers.cell) == 0) {
-			match = 1;
 			matchIndex = i;
 		}
-		else {
-			match = 0;
-		}
+
 	}
-	if (match == 1) { //if a match is found, return matchIndex
-		printf("DEBUG, returned %d\n\n", matchIndex); //REMOVE ON SUBMIT
-		return matchIndex;
-	}
-	else {
-		printf("DEBUG, returned %d\n\n", matchIndex); //REMOVE ON SUBMIT
-		return -1;
-	}
+	return matchIndex;
 }
 
 // displayContactHeader
@@ -336,11 +325,24 @@ void searchContacts(const struct Contact contactList[], int size) //an array of 
 {
 	int i = 0;
 	char numSearch[50];
+	int matchIndex = -1;
+
 	printf("Enter the cell number for the contact: ");
 
 	getTenDigitPhone(numSearch); //does not return anything, just holds you up until you enter a valid entry
-	findContactIndex(contactList, MAXCONTACTS, numSearch);
+	matchIndex = findContactIndex(contactList, MAXCONTACTS, numSearch);
 	putchar('\n');
+
+	if (matchIndex != -1) {
+		displayContact(&contactList[matchIndex]);
+		putchar('\n');
+	}
+	else {
+		printf("*** Contact NOT FOUND ***\n");
+		putchar('\n');
+
+	}
+
 }
 
 // addContact:
