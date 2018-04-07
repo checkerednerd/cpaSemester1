@@ -1,0 +1,17 @@
+3) findContactIndex and getTenDigitPhone were benificial to the maintainability/readability
+of my source code, in that these functions were called upon numerous times by other functions
+to complete their own tasks. In putting the code for findContactIndex and getTenDigitPhone
+into seperate functions, we greatly reduced the amount of redundant code that needed to be written.
+Had we not have done this, we would have needed to write the code for each of these every time we
+used them. This would be a waste of time, a waste of memory, and would greatly
+hinder the readability of our code - as there would be dozens if not hundreds of additional,
+redundant lines of code.
+
+4) From doing Assignment 2, I gained a stronger appreciation for the expandability of structures
+and arrays for storing data. Early on in this assignment, we populated structures with
+members, and structures with arrays of members (such as strings). As the assignment has grown in
+scale, the scale of our variables and structures has increased along with it. By Milestone 4, I 
+can now appreciate that we can create arrays of structures, structures of arrays, and most 
+recently, an array of structures that contain structures (contactList[].name.firstName in my 
+case), and so forth. While this can appear confusing, the simplistic relationship between data 
+structures allows me to better understand how data is stored and passed through a program.
