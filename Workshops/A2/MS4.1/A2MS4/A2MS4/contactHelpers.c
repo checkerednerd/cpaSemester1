@@ -208,7 +208,7 @@ void ContactManagerSystem(void)
 			break;
 		case 6:
 			putchar('\n');
-			printf("\n<<< Feature 6 is unavailable >>>\n\n");
+			printf("\n<<< Feature to sort is unavailable >>>\n\n");
 			pause();
 			putchar('\n');
 			break;
