@@ -152,7 +152,7 @@ void ContactManagerSystem(void)
 	int menuChoice = -1;
 	int quitChoice = -1;
 
-	struct Contact contactList[MAXCONTACTS] = { //create an array of structs, an array of Contact structurs called contactList
+	struct Contact contactList[MAXCONTACTS] = { //create an array of structs, an array of Contact structures called contactList
 		{ { "Rick", { '\0' }, "Grimes" },
 	{ 11, "Trailer Park", 0, "A7A 2J2", "King City" },
 	{ "4161112222", "4162223333", "4163334444" } },
@@ -208,7 +208,7 @@ void ContactManagerSystem(void)
 			break;
 		case 6:
 			putchar('\n');
-			printf("\n<<< Feature to sort is unavailable >>>\n\n");
+			sortContacts(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
@@ -451,5 +451,19 @@ void deleteContact(struct Contact contactList[], int size) //an array of structs
 // sortContacts:
 void sortContacts(struct Contact contactList[], int size) //an array of structs
 {
-	//optional
+	int i, j;
+	struct Contact temp; //temporary structure to hold hold the sorted value
+
+	for (j = 0; j < size; j++) { //need two loops to properly cycle for each comparison
+		for (i = 0; i < size; i++) {
+			if (strcmp(contactList[i].numbers.cell, contactList[j].numbers.cell) > 0) { //if first string follows second string
+				if (strlen(contactList[i].numbers.cell) > 0 && strlen(contactList[j].numbers.cell) > 0) { //if cell phone number isn't blank
+					temp = contactList[i]; //[i] is higher value, store it in Contact temp
+					contactList[i] = contactList[j]; //cycle contents of contactList [j] with [i] to carry on sort
+					contactList[j] = temp; //last part of cycle for this entry of contactList[i]
+				}
+			}
+		}
+	}
+	printf("--- Contacts sorted! ---\n");
 }
