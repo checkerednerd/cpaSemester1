@@ -187,12 +187,12 @@ void ContactManagerSystem(void)
 			putchar('\n');
 			break;
 		case 3:
-			printf("\n<<< Feature 3 is unavailable >>>\n\n");
+			updateContact(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
 		case 4:
-			printf("\n<<< Feature 4 is unavailable >>>\n\n");
+			deleteContact(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
@@ -335,7 +335,6 @@ void searchContacts(const struct Contact contactList[], int size) //an array of 
 	putchar('\n');
 
 	if (matchIndex != -1) {
-		printf("Contact found:\n");
 		displayContact(&contactList[matchIndex]);
 		putchar('\n');
 	}
@@ -370,14 +369,67 @@ void addContact(struct Contact contactList[], int size) //an array of structs
 // updateContact:
 void updateContact(struct Contact contactList[], int size) //an array of structs
 {
+	char numSearch[50];
+	int choice = 0;
+	int matchIndex = -1;
 
+	printf("Enter the cell number for the contact: ");
+
+	getTenDigitPhone(numSearch); //does not return anything, just holds you up until you enter a valid entry
+	matchIndex = findContactIndex(contactList, MAXCONTACTS, numSearch);
+	putchar('\n');
+
+	if (matchIndex != -1) {
+		printf("Contact found:\n");
+		displayContact(&contactList[matchIndex]);
+		putchar('\n');
+
+		printf("Do you want to update the name? (y or n): ");
+		choice = yes();
+		if (choice == 1) {
+			getName(&contactList[matchIndex].name);
+		}
+
+		printf("Do you want to update the address? (y or n): ");
+		choice = yes();
+		if (choice == 1) {
+			getAddress(&contactList[matchIndex].address);
+		}
+
+		printf("Do you want to update the numbers? (y or n): ");
+		choice = yes();
+		if (choice == 1) {
+			getNumbers(&contactList[matchIndex].numbers);
+		}
+	}
+	else {
+		printf("*** Contact NOT FOUND ***\n");
+		putchar('\n');
+	}
 }
 
 
 // deleteContact:
 void deleteContact(struct Contact contactList[], int size) //an array of structs
 {
+	char numSearch[50];
+	int matchIndex = -1;
 
+	printf("Enter the cell number for the contact: ");
+
+	getTenDigitPhone(numSearch); //does not return anything, just holds you up until you enter a valid entry
+	matchIndex = findContactIndex(contactList, MAXCONTACTS, numSearch);
+	putchar('\n');
+
+	if (matchIndex != -1) {
+		printf("Contact found:\n");
+		displayContact(&contactList[matchIndex]);
+		putchar('\n');
+	}
+	else {
+		printf("*** Contact NOT FOUND ***\n");
+		putchar('\n');
+	}
 }
 
 // sortContacts:

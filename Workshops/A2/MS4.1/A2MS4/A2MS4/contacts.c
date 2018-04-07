@@ -41,6 +41,9 @@ void getName(struct Name * contactName) {
 		printf("Please enter the contact's middle initial(s): ");
 		scanf("%s", contactName->middleInitial);
 	}
+	else {
+		*contactName->middleInitial = '\0'; //added for MS4, when updating, will overwrite existing optional fields with \0
+	}
 	choice = -1; //clear choice for future use
 
 	printf("Please enter the contact's last name: ");
