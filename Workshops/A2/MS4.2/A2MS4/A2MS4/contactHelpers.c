@@ -289,7 +289,7 @@ void displayContact(const struct Contact* contact)
 	if (strlen(contact->name.middleInitial) > 0) { //if there is a middle initial
 
 		printf(" %s %s %s\n", contact->name.firstName, contact->name.middleInitial, contact->name.lastName);
-		printf("    C: %-10s    H: %-10s    B: %-10s\n", contact->numbers.cell, contact->numbers.home, contact->numbers.business);
+		printf("    C: %-10s   H: %-10s   B: %-10s\n", contact->numbers.cell, contact->numbers.home, contact->numbers.business);
 
 		if (contact->address.apartmentNumber > 0) { //if there is an apartment number
 			printf("       %d %s, Apt# %d, %s, %s\n", contact->address.streetNumber, contact->address.street, contact->address.apartmentNumber, contact->address.city, contact->address.postalCode);
@@ -302,7 +302,7 @@ void displayContact(const struct Contact* contact)
 	else { //if there is no middle initial
 
 		printf(" %s %s\n", contact->name.firstName, contact->name.lastName);
-		printf("    C: %-10s    H: %-10s    B: %-10s\n", contact->numbers.cell, contact->numbers.home, contact->numbers.business);
+		printf("    C: %-10s   H: %-10s   B: %-10s\n", contact->numbers.cell, contact->numbers.home, contact->numbers.business);
 
 		if (contact->address.apartmentNumber > 0) { //if there is an apartment number
 			printf("       %d %s, Apt# %d, %s, %s\n", contact->address.streetNumber, contact->address.street, contact->address.apartmentNumber, contact->address.city, contact->address.postalCode);
