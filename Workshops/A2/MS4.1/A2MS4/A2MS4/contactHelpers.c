@@ -177,29 +177,37 @@ void ContactManagerSystem(void)
 
 		switch (menuChoice) {
 		case 1:
+			putchar('\n');
 			displayContacts(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
 		case 2:
+			putchar('\n');
 			addContact(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
 		case 3:
+			putchar('\n');
 			updateContact(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
 		case 4:
+			putchar('\n');
 			deleteContact(contactList, MAXCONTACTS);
 			pause();
 			putchar('\n');
 			break;
 		case 5:
+			putchar('\n');
 			searchContacts(contactList, MAXCONTACTS);
+			pause();
+			putchar('\n');
 			break;
 		case 6:
+			putchar('\n');
 			printf("\n<<< Feature 6 is unavailable >>>\n\n");
 			pause();
 			putchar('\n');
@@ -377,10 +385,9 @@ void updateContact(struct Contact contactList[], int size) //an array of structs
 
 	getTenDigitPhone(numSearch); //does not return anything, just holds you up until you enter a valid entry
 	matchIndex = findContactIndex(contactList, MAXCONTACTS, numSearch);
-	putchar('\n');
 
 	if (matchIndex != -1) {
-		printf("Contact found:\n");
+		printf("\nContact found:\n");
 		displayContact(&contactList[matchIndex]);
 		putchar('\n');
 
@@ -401,10 +408,10 @@ void updateContact(struct Contact contactList[], int size) //an array of structs
 		if (choice == 1) {
 			getNumbers(&contactList[matchIndex].numbers);
 		}
+		printf("--- Contact Updated! ---\n");
 	}
 	else {
 		printf("*** Contact NOT FOUND ***\n");
-		putchar('\n');
 	}
 }
 
@@ -414,6 +421,7 @@ void deleteContact(struct Contact contactList[], int size) //an array of structs
 {
 	char numSearch[50];
 	int matchIndex = -1;
+	int choice = 0;
 
 	printf("Enter the cell number for the contact: ");
 
@@ -425,6 +433,14 @@ void deleteContact(struct Contact contactList[], int size) //an array of structs
 		printf("Contact found:\n");
 		displayContact(&contactList[matchIndex]);
 		putchar('\n');
+
+		printf("CONFIRM: Delete this contact? (y or n): ");
+		choice = yes();
+
+		if (choice == 1) {
+			*contactList[matchIndex].numbers.cell = '\0';
+			printf("--- Contact deleted! ---\n");
+		}
 	}
 	else {
 		printf("*** Contact NOT FOUND ***\n");

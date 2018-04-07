@@ -30,7 +30,7 @@ int choice = -1;
 void getName(struct Name * contactName) {
 
 	printf("Please enter the contact's first name: ");
-	scanf("%s", contactName->firstName);
+	scanf("%[^\n]s", contactName->firstName);
 
 	while (choice != 1 && choice != 0) {
 		printf("Do you want to enter a middle initial(s)? (y or n): ");
@@ -40,6 +40,7 @@ void getName(struct Name * contactName) {
 	if (choice == 1) {
 		printf("Please enter the contact's middle initial(s): ");
 		scanf("%s", contactName->middleInitial);
+		clearKeyboard(); //needed to add to deal with hangups on two word inputs
 	}
 	else {
 		*contactName->middleInitial = '\0'; //added for MS4, when updating, will overwrite existing optional fields with \0
@@ -47,7 +48,7 @@ void getName(struct Name * contactName) {
 	choice = -1; //clear choice for future use
 
 	printf("Please enter the contact's last name: ");
-	scanf("%s", contactName->lastName);
+	scanf("%[^\n]s", contactName->lastName);
 
 	return;
 }
@@ -70,13 +71,18 @@ void getAddress(struct Address * contactAddress) {
 		printf("Please enter the contact's apartment number: ");
 		contactAddress->apartmentNumber = getInt();
 	}
+	else {
+		contactAddress->apartmentNumber = '\0'; //added for MS4, when updating, will overwrite existing optional fields with \0
+	}
 	choice = -1; //clear choice for future use
 
 	printf("Please enter the contact's postal code: ");
 	scanf("%[^\n]s", contactAddress->postalCode);
+	clearKeyboard();
 
 	printf("Please enter the contact's city: ");
-	scanf("%s", contactAddress->city);
+	scanf("%[^\n]s", contactAddress->city);
+	clearKeyboard();
 
 	return;
 }
@@ -99,6 +105,9 @@ void getNumbers(struct Numbers * contactNumbers) {
 		getTenDigitPhone(examplePhone);
 		strcpy(contactNumbers->home, examplePhone);
 	}
+	else {
+		*contactNumbers->home = '\0'; //added for MS4, when updating, will overwrite existing optional fields with \0
+	}
 	choice = -1;
 
 	while (choice != 1 && choice != 0) {
@@ -110,6 +119,9 @@ void getNumbers(struct Numbers * contactNumbers) {
 		printf("Please enter the contact's business phone number: ");
 		getTenDigitPhone(examplePhone);
 		strcpy(contactNumbers->business, examplePhone);
+	}
+	else {
+		*contactNumbers->business = '\0'; //added for MS4, when updating, will overwrite existing optional fields with \0
 	}
 	choice = -1;
 
