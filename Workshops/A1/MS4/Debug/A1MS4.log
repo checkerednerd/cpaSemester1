@@ -1,7 +1,0 @@
-﻿  a1ms4.c
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\ms4\a1ms4.c(48): error C2059: syntax error: '}'
-  contacts.c
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\ms4\contacts.c(27): warning C4026: function declared with formal parameter list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\ms4\contacts.c(35): warning C4026: function declared with formal parameter list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a1\ms4\contacts.c(43): warning C4026: function declared with formal parameter list
-  Generating Code...

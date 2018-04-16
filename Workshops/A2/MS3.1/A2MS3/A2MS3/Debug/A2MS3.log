@@ -1,7 +1,0 @@
-﻿  contactHelpers.c
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(258): error C2055: expected formal parameter list, not a type list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(266): error C2055: expected formal parameter list, not a type list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(274): error C2055: expected formal parameter list, not a type list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(282): error C2055: expected formal parameter list, not a type list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(290): error C2055: expected formal parameter list, not a type list
-c:\users\checkerednerd\documents\github\cpasemester1\workshops\a2\ms3.1\a2ms3\a2ms3\contacthelpers.c(298): error C2055: expected formal parameter list, not a type list
